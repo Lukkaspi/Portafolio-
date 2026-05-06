@@ -13,7 +13,7 @@ export default function Navbar() {
         </Link>
         <nav className="pointer-events-auto hidden items-center gap-3 md:flex">
           <a
-            href="mailto:hello@example.com"
+            href="mailto:lukkaspiluttini@gmail.com"
             className="btn-ghost"
           >
             Contact
