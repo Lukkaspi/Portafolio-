@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react';
 import useIsMobile from '../hooks/useIsMobile.js';
 import Hero from '../components/Hero.jsx';
 import Stars from '../components/Stars.jsx';
-import MobileGrid from '../components/MobileGrid.jsx';
 import PacmanDivider from '../components/PacmanDivider.jsx';
 
 // Lazy-load the 3D scene so mobile bundles don't pay for Three.js.
@@ -13,14 +12,25 @@ export default function Home() {
 
   if (isMobile) {
     return (
-      <main className="relative min-h-screen overflow-hidden bg-ink-900 text-zinc-100">
+      <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-ink-950 px-6 text-center text-zinc-100">
         <Stars />
-        <section className="container-page pb-4 pt-28">
-          <Hero />
-        </section>
-        <section id="projects" className="relative z-10">
-          <MobileGrid />
-        </section>
+        <div className="relative z-10">
+          <p
+            className="anim-fade-up text-[11px] font-medium uppercase tracking-[0.32em] text-zinc-400"
+            style={{ animationDelay: '20ms' }}
+          >
+            View the website on desktop
+          </p>
+          <h1
+            className="anim-fade-up mt-6 text-5xl font-semibold leading-[0.92] tracking-[-0.04em] text-white sm:text-6xl"
+            style={{ animationDelay: '160ms' }}
+          >
+            <span className="block">Lukka</span>
+            <span className="block bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+              Spiluttini
+            </span>
+          </h1>
+        </div>
       </main>
     );
   }

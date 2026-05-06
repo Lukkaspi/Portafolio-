@@ -103,7 +103,7 @@ export default function Project() {
 
       <div className="mt-16 flex justify-between border-t border-white/5 pt-8">
         <Link to="/" className="btn-ghost">← All projects</Link>
-        <a href="mailto:hello@example.com" className="btn-ghost">Get in touch →</a>
+        <a href="mailto:lukkaspiluttini@gmail.com" className="btn-ghost">Get in touch →</a>
       </div>
     </main>
   );
