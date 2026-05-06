@@ -76,21 +76,21 @@ export const projects = [
     images: ['images/projects/car-sketches/cover.svg'],
     gallery: [
       {
-        src: 'images/projects/car-sketches/01-lamborghini-sto.jpg',
+        src: 'images/projects/car-sketches/IMG_2425.png',
         tag: 'Hypercar Exploration',
         title: 'Huracán STO — Front 3/4 Blockout',
         caption:
           'A gridded under-drawing exploring the STO\'s wedge stance, dihedral nose vents and aggressive cab-forward proportions. The grid is kept in the final to expose the underlying construction.',
       },
       {
-        src: 'images/projects/car-sketches/02-porsche-911-turbo.jpg',
+        src: 'images/projects/car-sketches/IMG_2392.png',
         tag: 'GT Performance Study',
         title: '911 Turbo — Tonal Value Study',
         caption:
           'Pencil tonal study of the 992 silhouette. Captures the iconic teardrop greenhouse, blistered rear haunches and the deltoid wheel arches that anchor the 911\'s design DNA.',
       },
       {
-        src: 'images/projects/car-sketches/03-gco-lt-concept.jpg',
+        src: 'images/projects/car-sketches/IMG_2391.png',
         tag: 'Personal Concept Direction',
         title: 'GCO LT — Long-Tail Hypercar',
         caption:
