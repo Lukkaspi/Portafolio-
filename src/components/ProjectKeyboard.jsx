@@ -12,6 +12,7 @@ import * as THREE from 'three';
 import { projects } from '../data/projects.js';
 import { keyStyles } from '../data/keyStyles.js';
 import { asset } from '../lib/asset.js';
+import { accentChipStyle } from '../lib/colors.js';
 
 // Exactly 10 slots. 5 columns × 2 rows. CUPRA in the front-centre.
 const SLOTS = [
@@ -342,38 +343,33 @@ export default function ProjectKeyboard({ theme = 'dark' }) {
         }`}
       >
         <div
-          className={`flex items-start gap-3 rounded-2xl border px-4 py-3 backdrop-blur-md ${
+          className={`rounded-2xl border px-4 py-3 backdrop-blur-md ${
             isLight
               ? 'border-black/10 bg-white/85 text-zinc-900'
               : 'border-white/5 bg-ink-800/70 text-white'
           }`}
         >
+          {/* Accent-tinted tag chip */}
           <span
-            className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full"
-            style={{ backgroundColor: keyStyles[hovered?.slug]?.accent ?? '#7c5cff' }}
-          />
-          <div>
-            <div
-              className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${
-                isLight ? 'text-zinc-500' : 'text-zinc-400'
-              }`}
-            >
-              {hovered?.tag ?? '—'}
-            </div>
-            <div
-              className={`mt-0.5 text-sm font-semibold ${
-                isLight ? 'text-zinc-900' : 'text-white'
-              }`}
-            >
-              {hovered?.title ?? '—'}
-            </div>
-            <div
-              className={`mt-0.5 line-clamp-2 text-xs ${
-                isLight ? 'text-zinc-600' : 'text-zinc-300/80'
-              }`}
-            >
-              {hovered?.summary ?? ''}
-            </div>
+            className="inline-flex items-center rounded-full px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.22em]"
+            style={accentChipStyle(keyStyles[hovered?.slug]?.accent ?? '#7c5cff')}
+          >
+            {hovered?.tag ?? '—'}
+          </span>
+          {/* Compact title — between hero and secondary */}
+          <div
+            className={`mt-1.5 text-sm font-semibold tracking-tight ${
+              isLight ? 'text-zinc-900' : 'text-white'
+            }`}
+          >
+            {hovered?.title ?? '—'}
+          </div>
+          <div
+            className={`mt-1 line-clamp-2 text-xs leading-snug ${
+              isLight ? 'text-zinc-600' : 'text-zinc-300/80'
+            }`}
+          >
+            {hovered?.summary ?? ''}
           </div>
         </div>
       </div>

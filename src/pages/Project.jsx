@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { projectBySlug } from '../data/projects.js';
 import { keyStyles } from '../data/keyStyles.js';
 import { asset } from '../lib/asset.js';
+import { accentChipStyle } from '../lib/colors.js';
 import ProjectGallery from '../components/ProjectGallery.jsx';
 
 export default function Project() {
@@ -28,14 +29,21 @@ export default function Project() {
       <Link to="/" className="btn-ghost mb-8">← Back</Link>
 
       <header>
-        <span className="chip">{project.tag}</span>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        {/* Accent-tinted tag chip — same colour as the project key */}
+        <span
+          className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.22em]"
+          style={accentChipStyle(accent)}
+        >
+          {project.tag}
+        </span>
+        {/* Editorial title — sits between hero (8vw) and secondary copy */}
+        <h1 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-white sm:text-3xl md:text-4xl">
           {project.title}
         </h1>
-        <p className="mt-2 text-sm text-zinc-400 sm:text-base">
+        <p className="mt-2 text-xs uppercase tracking-[0.2em] text-zinc-500 sm:text-[13px]">
           {project.role} · {project.year}
         </p>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-200 sm:text-lg">
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
           {project.summary}
         </p>
       </header>
