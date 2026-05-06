@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { projectBySlug } from '../data/projects.js';
+import { keyStyles } from '../data/keyStyles.js';
 import { asset } from '../lib/asset.js';
+import ProjectGallery from '../components/ProjectGallery.jsx';
 
 export default function Project() {
   const { slug } = useParams();
   const project = projectBySlug[slug];
+  const accent = keyStyles[slug]?.accent;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -67,7 +70,13 @@ export default function Project() {
         </ol>
       </Section>
 
-      {project.images.length > 1 && (
+      {project.gallery && project.gallery.length > 0 && (
+        <Section title="Selected Works">
+          <ProjectGallery items={project.gallery} accent={accent} />
+        </Section>
+      )}
+
+      {!project.gallery && project.images.length > 1 && (
         <Section title="Visuals">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {project.images.slice(1).map((src, i) => (
@@ -101,9 +110,8 @@ export default function Project() {
         <p className="leading-relaxed text-zinc-300">{project.outcome}</p>
       </Section>
 
-      <div className="mt-16 flex justify-between border-t border-white/5 pt-8">
+      <div className="mt-16 border-t border-white/5 pt-8">
         <Link to="/" className="btn-ghost">← All projects</Link>
-        <a href="mailto:lukkaspiluttini@gmail.com" className="btn-ghost">Get in touch →</a>
       </div>
     </main>
   );

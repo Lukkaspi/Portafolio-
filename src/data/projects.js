@@ -54,25 +54,49 @@ export const projects = [
   {
     slug: 'car-sketches',
     key: 'C',
-    title: 'Car Sketches',
+    title: 'Automotive Sketches',
     role: 'Sketching · Visual development',
     year: '2022 — 2025',
-    tag: 'Sketching',
+    tag: 'Automotive · Sketching',
     accent: 'accent',
     summary:
-      'Ongoing sketching practice — proportion studies, perspective drills, and fast ideation pages built up over three years.',
+      'A curated selection of automotive studies — proportion blockouts, tonal value studies and personal concept directions, built up across three years of practice.',
     problem:
-      'Industrial design begins on paper. The goal of this body of work is to keep a daily-ish habit of fast, confident automotive sketching to support concept work without slowing it down.',
+      'Every concept project starts on paper. The goal of this body of work is to keep a daily-ish habit of fast, confident automotive sketching so that proportion, stance and surface decisions can be reasoned about visually before any CAD or surfacing tool is opened.',
     process: [
       { title: 'Daily warm-ups', body: '5–10 minute thumbnails in marker and ballpoint to keep line confidence sharp.' },
-      { title: 'Perspective drills', body: 'One-, two- and three-point perspective grids with reference photos rotated to off-axis angles.' },
-      { title: 'Style explorations', body: 'Alternated between Syd Mead-style pen renders, loose marker comps, and digital sketches in Procreate to keep visual range broad.' },
+      { title: 'Reference studies', body: 'Front three-quarter blockouts of contemporary performance cars — Lamborghini, Porsche, McLaren — to internalise stance, dash-to-axle and DLO graphics.' },
+      { title: 'Tonal value', body: 'Pencil shading passes to study how light falls across a body — separating volumes, glass and aero detail without colour.' },
+      { title: 'Concept direction', body: 'From learned references, sketches push toward original concept directions — mid-engined long-tail studies, raised-cab GTs, etc.' },
       { title: 'Curated highlights', body: 'Best pages are reworked digitally with shadow passes and accent colour for portfolio use.' },
     ],
     technical: null,
     outcome:
-      'A consistent visual language that now feeds directly into concept projects — including the CUPRA case study. Most sketches are produced in <15 minutes.',
+      'A consistent personal visual language that now feeds directly into concept projects — including the CUPRA case study. Most sketches are produced in under 15 minutes.',
     images: ['images/projects/car-sketches/cover.svg'],
+    gallery: [
+      {
+        src: 'images/projects/car-sketches/01-lamborghini-sto.jpg',
+        tag: 'Hypercar Exploration',
+        title: 'Huracán STO — Front 3/4 Blockout',
+        caption:
+          'A gridded under-drawing exploring the STO\'s wedge stance, dihedral nose vents and aggressive cab-forward proportions. The grid is kept in the final to expose the underlying construction.',
+      },
+      {
+        src: 'images/projects/car-sketches/02-porsche-911-turbo.jpg',
+        tag: 'GT Performance Study',
+        title: '911 Turbo — Tonal Value Study',
+        caption:
+          'Pencil tonal study of the 992 silhouette. Captures the iconic teardrop greenhouse, blistered rear haunches and the deltoid wheel arches that anchor the 911\'s design DNA.',
+      },
+      {
+        src: 'images/projects/car-sketches/03-gco-lt-concept.jpg',
+        tag: 'Personal Concept Direction',
+        title: 'GCO LT — Long-Tail Hypercar',
+        caption:
+          'A personal concept: a low-slung mid-engined hypercar with long-tail proportions, dihedral door cuts and aero-driven side intakes. Explored under a McLaren-language brief.',
+      },
+    ],
   },
 
   {
