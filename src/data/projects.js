@@ -475,9 +475,8 @@ export const projects = [
     drawings: {
       groups: [
         {
-          key: 'final-presentation',
-          // No title/kicker → component skips the section header. Just the
-          // intro paragraph above and the embedded presentation panel below.
+          key: 'group-presentations',
+          // No title/kicker → component skips the section header.
           itemKicker: 'Document',
           stamp: 'TAD2 · PRESENTATION',
           items: [
@@ -485,6 +484,11 @@ export const projects = [
               title: 'Final Presentation',
               subtitle: 'TAD2-P1 · GT05',
               file: 'media/intercom-study/01-final-presentation.pdf',
+            },
+            {
+              title: 'Follow-up Presentation',
+              subtitle: 'TAD2-P2 · GT05',
+              file: 'media/intercom-study/02-followup-presentation.pdf',
             },
           ],
         },
