@@ -167,7 +167,7 @@ function ProjectKey({ slot, project, style, texture, hoveredSlug, setHoveredSlug
   );
 }
 
-function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
+function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect, light = false }) {
   const groupRef = useRef();
   const textures = useTexture(capPaths);
 
@@ -218,34 +218,45 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
 
   return (
     <group ref={groupRef} rotation={[-0.12, 0, 0]} scale={0.88}>
-      {/* Smoked-glass base plate — semi-transparent so the hero stars and
-          gradients bleed through, and so nothing reads as a bright slab. */}
-      <mesh position={[0, -KEY_H / 2 - 0.12, 0]} receiveShadow>
-        <boxGeometry args={[totalW + 0.5, 0.10, totalD + 0.5]} />
-        <meshPhysicalMaterial
-          color="#06101e"
-          transparent
-          opacity={0.42}
-          roughness={0.18}
-          metalness={0.0}
-          clearcoat={0.7}
-          clearcoatRoughness={0.18}
-          reflectivity={0.35}
-          ior={1.4}
-        />
-      </mesh>
+      {/* Base plate — smoked-glass on dark side, white satin on light side */}
+      {light ? (
+        <mesh position={[0, -KEY_H / 2 - 0.12, 0]} receiveShadow>
+          <boxGeometry args={[totalW + 0.5, 0.10, totalD + 0.5]} />
+          <meshPhysicalMaterial
+            color="#ffffff"
+            roughness={0.4}
+            metalness={0.0}
+            clearcoat={0.45}
+            clearcoatRoughness={0.35}
+          />
+        </mesh>
+      ) : (
+        <mesh position={[0, -KEY_H / 2 - 0.12, 0]} receiveShadow>
+          <boxGeometry args={[totalW + 0.5, 0.10, totalD + 0.5]} />
+          <meshPhysicalMaterial
+            color="#06101e"
+            transparent
+            opacity={0.42}
+            roughness={0.18}
+            metalness={0.0}
+            clearcoat={0.7}
+            clearcoatRoughness={0.18}
+            reflectivity={0.35}
+            ior={1.4}
+          />
+        </mesh>
+      )}
 
-      {/* Soft accent under-light. Subtle violet wash so the base plate
-          reads as illuminated from beneath rather than a dark void. */}
+      {/* Under-light wash. Violet on dark, soft warm pearl on light. */}
       <mesh
         position={[0, -KEY_H / 2 - 0.19, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
         <planeGeometry args={[totalW + 0.6, totalD + 0.6]} />
         <meshBasicMaterial
-          color="#7c5cff"
+          color={light ? '#e2e8f0' : '#7c5cff'}
           transparent
-          opacity={0.14}
+          opacity={light ? 0.6 : 0.14}
           toneMapped={false}
         />
       </mesh>
@@ -270,10 +281,11 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
   );
 }
 
-export default function ProjectKeyboard() {
+export default function ProjectKeyboard({ theme = 'dark' }) {
   const navigate = useNavigate();
   const [hoveredSlug, setHoveredSlug] = useState(null);
   const hovered = hoveredSlug ? projectBySlug[hoveredSlug] : null;
+  const isLight = theme === 'light';
 
   return (
     <div className="relative h-full w-full">
@@ -286,28 +298,35 @@ export default function ProjectKeyboard() {
       >
         <color attach="background" args={['#00000000']} />
 
-        <ambientLight intensity={0.32} />
+        <ambientLight intensity={isLight ? 0.7 : 0.32} />
         <directionalLight
           position={[6, 9, 5]}
-          intensity={0.9}
+          intensity={isLight ? 1.1 : 0.9}
           castShadow
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
         />
-        <pointLight position={[-7, 3, -5]} intensity={0.55} color="#7c5cff" />
-        <pointLight position={[7, 2, -4]} intensity={0.4} color="#5b9eff" />
+        {!isLight && (
+          <>
+            <pointLight position={[-7, 3, -5]} intensity={0.55} color="#7c5cff" />
+            <pointLight position={[7, 2, -4]} intensity={0.4} color="#5b9eff" />
+          </>
+        )}
 
         <Suspense fallback={null}>
-          {/* Dim environment so reflections stay dark and smoky, never white */}
-          <Environment preset="night" environmentIntensity={0.2} />
+          <Environment
+            preset={isLight ? 'apartment' : 'night'}
+            environmentIntensity={isLight ? 0.5 : 0.2}
+          />
           <KeyboardGroup
             hoveredSlug={hoveredSlug}
             setHoveredSlug={setHoveredSlug}
             onSelect={(p) => navigate(`/project/${p.slug}`)}
+            light={isLight}
           />
           <ContactShadows
             position={[0, -0.45, 0]}
-            opacity={0.45}
+            opacity={isLight ? 0.28 : 0.45}
             scale={9}
             blur={2.6}
             far={5}
@@ -322,19 +341,37 @@ export default function ProjectKeyboard() {
           hovered ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
         }`}
       >
-        <div className="card flex items-start gap-3 px-4 py-3 backdrop-blur-md">
+        <div
+          className={`flex items-start gap-3 rounded-2xl border px-4 py-3 backdrop-blur-md ${
+            isLight
+              ? 'border-black/10 bg-white/85 text-zinc-900'
+              : 'border-white/5 bg-ink-800/70 text-white'
+          }`}
+        >
           <span
             className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full"
             style={{ backgroundColor: keyStyles[hovered?.slug]?.accent ?? '#7c5cff' }}
           />
           <div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
+            <div
+              className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${
+                isLight ? 'text-zinc-500' : 'text-zinc-400'
+              }`}
+            >
               {hovered?.tag ?? '—'}
             </div>
-            <div className="mt-0.5 text-sm font-semibold text-white">
+            <div
+              className={`mt-0.5 text-sm font-semibold ${
+                isLight ? 'text-zinc-900' : 'text-white'
+              }`}
+            >
               {hovered?.title ?? '—'}
             </div>
-            <div className="mt-0.5 text-xs text-zinc-300/80 line-clamp-2">
+            <div
+              className={`mt-0.5 line-clamp-2 text-xs ${
+                isLight ? 'text-zinc-600' : 'text-zinc-300/80'
+              }`}
+            >
               {hovered?.summary ?? ''}
             </div>
           </div>
