@@ -29,11 +29,12 @@ const SLOTS = [
   { slug: 'dam-beverage', col: 4, row: 1 },
 ];
 
-// Geometry constants
-const KEY_W = 1.55;
-const KEY_D = 1.55;
-const KEY_H = 0.42;
-const GAP = 0.16;
+// Geometry constants — compact, balanced, fits tall right-column at iPad
+// landscape aspect ratios without horizontal stretching.
+const KEY_W = 1.05;
+const KEY_D = 1.05;
+const KEY_H = 0.36;
+const GAP = 0.1;
 const COLS = 5;
 const ROWS = 2;
 
@@ -65,12 +66,12 @@ function ProjectKey({ slot, project, style, texture, hoveredSlug, setHoveredSlug
 
   useFrame((_, delta) => {
     if (!groupRef.current) return;
-    const k = isHovered ? 1.18 : anyHovered ? 0.92 : 1.0;
+    const k = isHovered ? 1.16 : anyHovered ? 0.94 : 1.0;
     targetScale.set(k, k, k);
     groupRef.current.scale.lerp(targetScale, Math.min(1, delta * 9));
 
     // Lift the hovered key a touch
-    const liftTarget = isHovered ? 0.18 : 0;
+    const liftTarget = isHovered ? 0.14 : 0;
     groupRef.current.position.y = THREE.MathUtils.lerp(
       groupRef.current.position.y,
       liftTarget,
@@ -185,16 +186,17 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
   useFrame((state, delta) => {
     if (!groupRef.current) return;
     const t = state.clock.elapsedTime;
-    // Gentle floating
-    const float = Math.sin(t * 0.85) * 0.06;
+    // Gentle floating — kept subtle so it doesn't fight readability.
+    const float = Math.sin(t * 0.85) * 0.03;
     groupRef.current.position.y = float;
 
-    // Subtle mouse-follow rotation around the base tilt
+    // Very subtle mouse-follow tilt around the base orientation. Reduced from
+    // the earlier values so all keys stay clearly visible at all times.
     const px = state.pointer.x;
     const py = state.pointer.y;
-    const baseX = -0.48; // tilt forward to show cap tops
-    const targetX = baseX + py * 0.05;
-    const targetY = px * 0.18 + Math.sin(t * 0.3) * 0.04;
+    const baseX = -0.12; // very mild forward tilt — view is mostly top-down
+    const targetX = baseX + py * 0.025;
+    const targetY = px * 0.05;
 
     groupRef.current.rotation.x = THREE.MathUtils.lerp(
       groupRef.current.rotation.x,
@@ -209,10 +211,10 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
   });
 
   return (
-    <group ref={groupRef} rotation={[-0.48, 0, 0]}>
+    <group ref={groupRef} rotation={[-0.12, 0, 0]}>
       {/* Base plate underneath the keys */}
-      <mesh position={[0, -KEY_H / 2 - 0.16, 0]} receiveShadow>
-        <boxGeometry args={[totalW + 0.7, 0.14, totalD + 0.7]} />
+      <mesh position={[0, -KEY_H / 2 - 0.13, 0]} receiveShadow>
+        <boxGeometry args={[totalW + 0.5, 0.12, totalD + 0.5]} />
         <meshPhysicalMaterial
           color="#0d0f14"
           roughness={0.6}
@@ -223,10 +225,10 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
 
       {/* Underglow ring */}
       <mesh
-        position={[0, -KEY_H / 2 - 0.225, 0]}
+        position={[0, -KEY_H / 2 - 0.195, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
-        <planeGeometry args={[totalW + 0.55, totalD + 0.55]} />
+        <planeGeometry args={[totalW + 0.4, totalD + 0.4]} />
         <meshBasicMaterial
           color="#7c5cff"
           transparent
@@ -265,7 +267,7 @@ export default function ProjectKeyboard() {
       <Canvas
         shadows
         dpr={[1, 1.75]}
-        camera={{ position: [0, 3.4, 6.5], fov: 32 }}
+        camera={{ position: [0, 6.5, 5.5], fov: 40 }}
         gl={{ antialias: true, powerPreference: 'high-performance' }}
         onPointerMissed={() => setHoveredSlug(null)}
       >
@@ -290,11 +292,11 @@ export default function ProjectKeyboard() {
             onSelect={(p) => navigate(`/project/${p.slug}`)}
           />
           <ContactShadows
-            position={[0, -0.6, 0]}
+            position={[0, -0.45, 0]}
             opacity={0.55}
-            scale={14}
+            scale={9}
             blur={2.4}
-            far={6}
+            far={5}
           />
         </Suspense>
       </Canvas>
