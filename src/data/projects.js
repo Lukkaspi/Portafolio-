@@ -8,47 +8,56 @@ export const projects = [
     slug: 'cupra',
     key: 'Space',
     title: 'CUPRA Concept Car',
-    role: 'Concept design · Surfacing · Renders',
-    year: '2024',
+    role: 'Concept Design · AI-Assisted Visualisation',
+    year: 'Automotive · Concept',
     tag: 'Automotive · Concept',
     accent: 'cupra',
     featured: true,
     summary:
-      'A brand-coherent electric coupé concept exploring CUPRA’s "contemporary performance" language for a 2030 driver.',
-    problem:
-      'CUPRA’s identity sits between Spanish craftsmanship and electric performance, but most concept work still leans on combustion-era proportions. The brief: propose a driver-focused 2+2 EV silhouette that visually communicates instant torque, low CG, and sustainable materiality without losing the brand’s aggressive stance.',
-    process: [
+      'A CUPRA-coded concept coupé built across three layers — freehand linework, hand-coloured studies and AI-assisted realistic visualisation. The project documents the evolution from traditional automotive ideation into a hybrid workflow where generative AI extends the sketch rather than replacing it.',
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
+    images: ['images/projects/cupra/cover.svg'],
+    categories: [
       {
-        title: 'Research & moodboard',
-        body: 'Benchmarked the Tavascan, Born VZ and direct competitors (Polestar 5, Hyundai N Vision 74). Built a moodboard around brushed copper, anodised graphite, and matte glass to anchor the material story.',
+        key: 'sketches',
+        title: 'Sketches',
+        kicker: 'Linework',
+        description:
+          'Initial freehand proportion studies — front and rear three-quarter blockouts. Pencil only, focused on stance, dash-to-axle and the CUPRA brand graphic.',
+        layout: 'two-up',
+        images: [
+          { src: 'media/cupra-concept/sketches/01-front-linework.png' },
+          { src: 'media/cupra-concept/sketches/02-rear-linework.png' },
+        ],
       },
       {
-        title: 'Ideation sketches',
-        body: '~80 thumbnail sketches in Procreate, narrowing to three directions: low-cab GT, raised-cab shooting brake, and a wedge coupé. The wedge tested best against the brand DNA matrix.',
+        key: 'colored',
+        title: 'Colour Study',
+        kicker: 'Material Pass',
+        description:
+          'Material and accent exploration on top of the linework — anodised graphite body, brushed-copper character lines and warm interior reflections. Hand-coloured to test the brand palette before any digital surface.',
+        layout: 'two-up',
+        images: [
+          { src: 'media/cupra-concept/colored/01-front-colored.jpeg' },
+          { src: 'media/cupra-concept/colored/02-rear-colored.png' },
+        ],
       },
       {
-        title: 'Tape drawing & blockmodel',
-        body: 'Full-side tape drawing at 1:5 to lock proportions, followed by a foam blockmodel to validate the dash-to-axle and DLO graphic in real volume.',
-      },
-      {
-        title: 'Digital surfacing',
-        body: 'Surfaces rebuilt in Blender with Class-A discipline (G2 continuity on character lines). Wheel arches, shoulder line and copper accent strip iterated against package constraints (800V battery floor, 2.85 m wheelbase).',
-      },
-      {
-        title: 'Visualisation',
-        body: 'KeyShot studio renders for hero shots; in-context renders dropped onto Montjuïc and Castellet plates for narrative. Final deck delivered as a 18-page PDF case study.',
+        key: 'renders',
+        title: 'AI-Assisted Visualisation',
+        kicker: 'Generative Render',
+        description:
+          'Realistic visualisation produced through generative AI image models, taking the colour studies as reference. The sketch DNA is preserved — the AI extends the surfacing into a photoreal volume rather than re-inventing the design.',
+        layout: 'two-up',
+        images: [
+          { src: 'media/cupra-concept/renders/01-front-render.png' },
+          { src: 'media/cupra-concept/renders/02-rear-render.png' },
+        ],
       },
     ],
-    technical: {
-      Platform: 'MEB+ EV (assumed) · 800 V architecture',
-      Dimensions: '4 480 × 1 920 × 1 320 mm · WB 2 850 mm',
-      Software: 'Procreate · Blender · KeyShot · Adobe Illustrator',
-      Materials: 'Recycled aluminium body panels · bio-PU interior · brushed copper accents',
-      Wheels: '21" forged, aero-optimised inserts',
-    },
-    outcome:
-      'Selected as one of three concepts presented in the end-of-semester automotive studio review. Faculty highlighted the resolution of the rear three-quarter and the discipline of the surfacing. The full case study is the centrepiece of this portfolio.',
-    images: ['images/projects/cupra/cover.svg'],
   },
 
   {
