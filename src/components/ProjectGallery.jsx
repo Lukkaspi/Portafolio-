@@ -52,7 +52,7 @@ export default function ProjectGallery({ items, accent = '#7c5cff' }) {
 
               {/* Index marker, top-right — accent-tinted */}
               <span
-                className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.2em] backdrop-blur-md"
+                className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-[3px] font-mono text-[10px] uppercase leading-none tracking-[0.2em] backdrop-blur-md"
                 style={accentChipStyle(accent)}
               >
                 <span
@@ -66,7 +66,7 @@ export default function ProjectGallery({ items, accent = '#7c5cff' }) {
             <div className="md:w-[42%] md:px-2">
               {/* Compact accent-tinted tag chip — same colour as the project key */}
               <span
-                className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.22em]"
+                className="inline-flex items-center rounded-full px-2.5 py-[3px] text-[10px] font-medium uppercase leading-none tracking-[0.22em]"
                 style={accentChipStyle(accent)}
               >
                 {item.tag}

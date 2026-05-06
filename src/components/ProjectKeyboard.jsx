@@ -351,7 +351,7 @@ export default function ProjectKeyboard({ theme = 'dark' }) {
         >
           {/* Accent-tinted tag chip */}
           <span
-            className="inline-flex items-center rounded-full px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.22em]"
+            className="inline-flex items-center rounded-full px-2 py-[3px] text-[9px] font-medium uppercase leading-none tracking-[0.22em]"
             style={accentChipStyle(keyStyles[hovered?.slug]?.accent ?? '#7c5cff')}
           >
             {hovered?.tag ?? '—'}
