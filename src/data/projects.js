@@ -111,31 +111,36 @@ export const projects = [
     slug: 'microplastics-filter',
     key: 'M',
     title: 'Microplastics Washing Machine Filter',
-    role: 'Product design · Mechanical engineering',
-    year: '2024',
+    role: 'Industrial Design · Design Workshop III',
+    year: 'TAD3 · Sole author',
     tag: 'Sustainability · Product',
     accent: 'accent',
+    wip: true,
+    author: 'Lukka Spiluttini',
     summary:
-      'A retrofittable inline filter that captures synthetic microfibres from washing-machine drainage before they reach the wastewater stream.',
-    problem:
-      'A single 6 kg synthetic load can release ~700 000 microfibres into the water network. Existing solutions are either bulky external boxes that intimidate users or one-shot pouches with low capture efficiency. The brief was a low-cost, replaceable-cartridge filter that any consumer could install in under five minutes.',
-    process: [
-      { title: 'Research', body: 'Reviewed PlanetCare, Filtrol, and academic studies on fibre-size distribution (8–500 μm). Surveyed 32 households about appliance access and willingness to maintain a consumable.' },
-      { title: 'Concept selection', body: 'Three concepts evaluated against a Pugh matrix: cyclonic separator, pleated mesh cartridge, and electrostatic capture. Pleated mesh won on cost, serviceability, and pressure drop.' },
-      { title: 'Mechanical design', body: 'Modelled in SolidWorks with a 50 μm stainless mesh, snap-fit cartridge, and standard 3/4" hose threads. Sized to fit between machine outlet and waste pipe under any standard washing machine.' },
-      { title: 'Prototyping', body: 'FDM-printed PETG housing + laser-cut steel mesh. Five units assembled for bench testing.' },
-      { title: 'Validation', body: 'Tested with a 2 kg synthetic-load proxy: capture efficiency measured by gravimetric analysis on the mesh after 10 cycles.' },
-    ],
-    technical: {
-      Filtration: '50 μm stainless steel mesh, pleated for surface area',
-      Housing: 'PETG (prototype) → ABS or PP target for production',
-      Connection: '3/4" BSP, standard washing-machine hose',
-      Software: 'SolidWorks · KeyShot · Excel for test analysis',
-      'Capture efficiency (test)': '~78% by mass over 10-cycle bench test',
-    },
-    outcome:
-      'Working prototype demonstrating ~78% fibre capture in bench tests, with cartridge replacement under 30 seconds. Project earned a top-quartile grade in the Product Development course and is being extended for a sustainability competition.',
+      'An ongoing industrial design project developed for the subject "Design Workshop III", focused on the creation of a microplastics filtration system for washing machines. The project explores sustainability-driven product development, filtration concepts, user interaction and environmental impact reduction through an evolving iterative design process.',
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
     images: ['images/projects/microplastics-filter/cover.svg'],
+    drawings: {
+      groups: [
+        {
+          key: 'process-document',
+          // No section title → component skips the chapter header.
+          itemKicker: 'Document',
+          stamp: 'TAD3 · IN PROGRESS',
+          items: [
+            {
+              title: 'Process Document',
+              subtitle: 'TAD3 · PAP',
+              file: 'media/microplastics-filter/01-presentation.pdf',
+            },
+          ],
+        },
+      ],
+    },
   },
 
   {

@@ -32,13 +32,32 @@ export default function Project() {
       <Link to="/" className="btn-ghost mb-8">← Back</Link>
 
       <header>
-        {/* Accent-tinted tag chip — same colour as the project key */}
-        <span
-          className="inline-flex items-center rounded-full px-2.5 py-[3px] text-[10px] font-medium uppercase leading-none tracking-[0.22em]"
-          style={accentChipStyle(accent)}
-        >
-          {project.tag}
-        </span>
+        {/* Accent-tinted tag chip — same colour as the project key.
+            When the project is marked WIP, an animated status chip
+            renders alongside it for an editorial "in development" mark. */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span
+            className="inline-flex items-center rounded-full px-2.5 py-[3px] text-[10px] font-medium uppercase leading-none tracking-[0.22em]"
+            style={accentChipStyle(accent)}
+          >
+            {project.tag}
+          </span>
+          {project.wip && (
+            <span
+              className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-[3px] text-[10px] font-medium uppercase leading-none tracking-[0.22em]"
+              style={accentChipStyle(accent)}
+            >
+              <span
+                className="anim-blink inline-block h-1.5 w-1.5 rounded-full"
+                style={{
+                  background: accent,
+                  boxShadow: `0 0 6px ${accent}`,
+                }}
+              />
+              Work in Progress
+            </span>
+          )}
+        </div>
         {/* Editorial title — sits between hero (8vw) and secondary copy */}
         <h1 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-white sm:text-3xl md:text-4xl">
           {project.title}
