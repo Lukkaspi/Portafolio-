@@ -3,8 +3,8 @@ import useIsMobile from '../hooks/useIsMobile.js';
 import HeroOverlay from '../components/HeroOverlay.jsx';
 import MobileGrid from '../components/MobileGrid.jsx';
 
-// Lazy-load the 3D scene so mobile bundles don't pay for Three.js.
-const KeyboardScene = lazy(() => import('../components/KeyboardScene.jsx'));
+// Lazy-load the Spline scene so mobile bundles don't pay for the runtime.
+const SplineKeyboard = lazy(() => import('../components/SplineKeyboard.jsx'));
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -25,11 +25,8 @@ export default function Home() {
       <HeroOverlay />
       <div className="absolute inset-0 z-0">
         <Suspense fallback={<SceneFallback />}>
-          <KeyboardScene />
+          <SplineKeyboard />
         </Suspense>
-      </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 flex justify-center">
-        <span className="chip">Drag to orbit · click a lit key</span>
       </div>
     </main>
   );
