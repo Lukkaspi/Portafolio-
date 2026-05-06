@@ -1,0 +1,18 @@
+export default function HeroOverlay({ compact = false }) {
+  return (
+    <div
+      className={`pointer-events-none ${
+        compact ? 'pt-16' : 'pt-24'
+      } container-page relative z-10`}
+    >
+      <span className="chip">Industrial Design · Product Development Engineering</span>
+      <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+        Each key, a project.
+      </h1>
+      <p className="mt-3 max-w-xl text-sm text-zinc-300 sm:text-base">
+        A portfolio in the shape of a keyboard. Hover a key to light it up,
+        click to open the project. Inactive keys are <span className="font-mono">coming soon</span>.
+      </p>
+    </div>
+  );
+}
