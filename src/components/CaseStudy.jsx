@@ -20,6 +20,7 @@ const LAYOUTS = {
   'single-large': SingleLargeLayout,
   'grid-detail': GridDetailLayout,
   cinematic: CinematicLayout,
+  'two-up': TwoUpLayout,
 };
 
 export default function CaseStudy({ categories, accent = '#7c5cff', folderRoot }) {
@@ -225,6 +226,29 @@ function CinematicLayout({ images }) {
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+function TwoUpLayout({ images }) {
+  // Side-by-side at natural aspect — never crops, ideal for paired
+  // automotive shots (front + rear).
+  return (
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+      {images.map((img, i) => (
+        <figure
+          key={i}
+          className="group overflow-hidden rounded-2xl border border-white/5 bg-zinc-950"
+        >
+          <img
+            src={asset(img.src)}
+            alt={img.caption ?? ''}
+            loading="lazy"
+            decoding="async"
+            className="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          />
+        </figure>
+      ))}
     </div>
   );
 }
