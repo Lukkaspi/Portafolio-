@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" fill="#1a1612"/>
+  <defs>
+    
+  <radialGradient id="g-94a3b8" cx="0.85" cy="0.15" r="0.55">
+    <stop offset="0" stop-color="#94a3b8" stop-opacity="0.32"/>
+    <stop offset="1" stop-color="#94a3b8" stop-opacity="0"/>
+  </radialGradient>
+
+  </defs>
+  <rect width="512" height="512" fill="#0e1a2e"/>
+  <rect width="512" height="512" fill="url(#g-94a3b8)"/>
   
-  <g fill="none" stroke="#c9a872" stroke-width="2.5" opacity="0.85">
+  <g fill="none" stroke="#94a3b8" stroke-width="2.5" opacity="0.85">
     <ellipse cx="256" cy="256" rx="150" ry="90"/>
     <ellipse cx="256" cy="256" rx="120" ry="72" opacity="0.55"/>
     <ellipse cx="256" cy="256" rx="90" ry="54" opacity="0.35"/>
   </g>
-  <!-- Centred leaf -->
   <path d="M 256 206
            C 306 226, 286 296, 256 306
            C 226 296, 206 226, 256 206 Z"
-        fill="#c9a872" opacity="0.85"/>
-  <path d="M 256 216 L 256 296" stroke="#1a1612" stroke-width="2"/>
+        fill="#94a3b8" opacity="0.85"/>
+  <path d="M 256 216 L 256 296" stroke="#0e1a2e" stroke-width="2"/>
   <text x="256" y="442" text-anchor="middle"
         font-family="Inter, system-ui, sans-serif" font-size="24"
-        font-weight="700" letter-spacing="6" fill="#e8d2a6">COMPOSTABLE</text>
+        font-weight="700" letter-spacing="6" fill="#94a3b8">COMPOSTABLE</text>
   
   <text x="32" y="484" font-family="JetBrains Mono, ui-monospace, monospace"
-        font-size="14" letter-spacing="2" fill="#c9a872" opacity="0.45">PORTFOLIO_</text>
+        font-size="14" letter-spacing="2" fill="#94a3b8" opacity="0.5">PORTFOLIO_</text>
 
 
 </svg>

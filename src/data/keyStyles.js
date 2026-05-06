@@ -1,60 +1,67 @@
 // Per-project visual styling for the 3D keycaps.
-// `body`     — keycap body color (dark, brand-tinted)
-// `accent`   — emissive glow & highlight color
-// `cap`      — texture path for the top face (in /public, no leading slash)
-// `wordmark` — optional fallback text rendered if the texture is missing
+// `body`     — keycap body color. Unified navy across all projects so the
+//              keyboard reads as a single console that visually integrates
+//              with the dark navy hero background. The unique colour comes
+//              from the cap face engraving and the emissive accent.
+// `accent`   — vibrant hue per project. Used for emissive glow on hover,
+//              the under-cap rim, and the engraved cap face graphic.
+// `cap`      — texture path for the top face (in /public, no leading slash).
 //
 // Coming-Soon keys ignore all of this and keep the generic graphite look.
 
+// Shared deep-navy body so the keyboard sits inside the hero gradient
+// without looking like a separate floating slab of pure black plastic.
+export const NAVY_BODY = '#0e1a2e';
+
 export const keyStyles = {
   cupra: {
-    body: '#1a0d07',
-    accent: '#c75a2a',
+    body: NAVY_BODY,
+    accent: '#f97316', // orange — CUPRA copper energy
     cap: 'images/keycaps/cupra.svg',
   },
   'car-sketches': {
-    body: '#26221b',
-    accent: '#d6a874',
+    body: NAVY_BODY,
+    accent: '#ec4899', // pink — creative / sketch ink
     cap: 'images/keycaps/car-sketches.svg',
   },
   'microplastics-filter': {
-    body: '#08151a',
-    accent: '#4dd2c2',
+    body: NAVY_BODY,
+    accent: '#14b8a6', // teal — water / filtration
     cap: 'images/keycaps/microplastics-filter.svg',
   },
   aparcat: {
-    body: '#0c1a13',
-    accent: '#52d27e',
+    body: NAVY_BODY,
+    accent: '#22c55e', // emerald — urban / parking
     cap: 'images/keycaps/aparcat.svg',
   },
   'uab-hackathon': {
-    body: '#1a0d10',
-    accent: '#e63946',
+    body: NAVY_BODY,
+    accent: '#ef4444', // red — UAB
     cap: 'images/keycaps/uab-hackathon.svg',
   },
   'university-sheets': {
-    body: '#1a1814',
-    accent: '#f1e3c2',
+    body: NAVY_BODY,
+    accent: '#f59e0b', // amber — paper / academic
     cap: 'images/keycaps/university-sheets.svg',
   },
   'technical-drawings': {
-    body: '#0a1220',
-    accent: '#5b9eff',
+    body: NAVY_BODY,
+    accent: '#0ea5e9', // sky — blueprint
     cap: 'images/keycaps/technical-drawings.svg',
   },
   'intercom-study': {
-    body: '#16181c',
-    accent: '#9bb0c2',
+    body: NAVY_BODY,
+    accent: '#a78bfa', // violet — audio / electronic
     cap: 'images/keycaps/intercom-study.svg',
   },
   'urn-packaging': {
-    body: '#1a1612',
-    accent: '#c9a872',
+    body: NAVY_BODY,
+    accent: '#94a3b8', // slate — memorial / cork-stone
     cap: 'images/keycaps/urn-packaging.svg',
   },
   'dam-beverage': {
-    body: '#14090a',
-    accent: '#d4af37',
+    body: NAVY_BODY,
+    accent: '#eab308', // yellow — gold beverage
     cap: 'images/keycaps/dam-beverage.svg',
   },
 };
