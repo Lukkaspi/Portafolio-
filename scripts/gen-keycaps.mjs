@@ -264,6 +264,47 @@ const dam = wrap(`
   ${microMark(ACC_DAM)}
 `, ACC_DAM);
 
+// 11. Drone Concept — cyan. Top-down quadcopter outline + crosshair grid.
+const ACC_DRONE = '#06b6d4';
+const drone = wrap(`
+  <!-- Faint targeting grid -->
+  <g stroke="${ACC_DRONE}" stroke-width="1" opacity="0.18">
+    <line x1="${SIZE / 2}" y1="40" x2="${SIZE / 2}" y2="${SIZE - 40}"/>
+    <line x1="40" y1="${SIZE / 2}" x2="${SIZE - 40}" y2="${SIZE / 2}"/>
+    <circle cx="${SIZE / 2}" cy="${SIZE / 2}" r="80" fill="none"/>
+    <circle cx="${SIZE / 2}" cy="${SIZE / 2}" r="160" fill="none"/>
+    <circle cx="${SIZE / 2}" cy="${SIZE / 2}" r="220" fill="none"/>
+  </g>
+  <!-- Quadcopter arms -->
+  <g stroke="${ACC_DRONE}" stroke-width="6" stroke-linecap="round" opacity="0.95">
+    <path d="M ${SIZE / 2} ${SIZE / 2} L 110 110"/>
+    <path d="M ${SIZE / 2} ${SIZE / 2} L ${SIZE - 110} 110"/>
+    <path d="M ${SIZE / 2} ${SIZE / 2} L 110 ${SIZE - 110}"/>
+    <path d="M ${SIZE / 2} ${SIZE / 2} L ${SIZE - 110} ${SIZE - 110}"/>
+  </g>
+  <!-- Rotor housings -->
+  <g stroke="${ACC_DRONE}" stroke-width="3" fill="none" opacity="0.9">
+    <circle cx="110" cy="110" r="44"/>
+    <circle cx="${SIZE - 110}" cy="110" r="44"/>
+    <circle cx="110" cy="${SIZE - 110}" r="44"/>
+    <circle cx="${SIZE - 110}" cy="${SIZE - 110}" r="44"/>
+  </g>
+  <!-- Rotor blades (subtle X inside each housing) -->
+  <g stroke="${ACC_DRONE}" stroke-width="2" opacity="0.55">
+    <line x1="74" y1="110" x2="146" y2="110"/>
+    <line x1="${SIZE - 146}" y1="110" x2="${SIZE - 74}" y2="110"/>
+    <line x1="74" y1="${SIZE - 110}" x2="146" y2="${SIZE - 110}"/>
+    <line x1="${SIZE - 146}" y1="${SIZE - 110}" x2="${SIZE - 74}" y2="${SIZE - 110}"/>
+  </g>
+  <!-- Central body -->
+  <circle cx="${SIZE / 2}" cy="${SIZE / 2}" r="34" fill="${ACC_DRONE}" opacity="0.95"/>
+  <circle cx="${SIZE / 2}" cy="${SIZE / 2}" r="14" fill="${BG}"/>
+  <text x="${SIZE / 2}" y="${SIZE - 60}" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="26"
+        font-weight="700" letter-spacing="8" fill="${ACC_DRONE}">DRONE · CONCEPT</text>
+  ${microMark(ACC_DRONE)}
+`, ACC_DRONE);
+
 const files = {
   'cupra.svg': cupra,
   'car-sketches.svg': carSketches,
@@ -275,6 +316,7 @@ const files = {
   'intercom-study.svg': intercom,
   'urn-packaging.svg': urn,
   'dam-beverage.svg': dam,
+  'drone-concept.svg': drone,
 };
 
 for (const [name, content] of Object.entries(files)) {
