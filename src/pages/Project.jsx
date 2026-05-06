@@ -79,6 +79,40 @@ export default function Project() {
             </span>
           </p>
         )}
+
+        {/* Launch-App CTA — appears when the project ships an interactive
+            prototype URL. Sits separately from the embedded PDF panel
+            below so the live experience is clearly distinct from the
+            case-study reading. */}
+        {project.appUrl && (
+          <div className="mt-7">
+            <a
+              href={project.appUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full border bg-ink-800/60 px-5 py-2.5 text-[12px] font-semibold uppercase leading-none tracking-[0.22em] text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5"
+              style={{
+                borderColor: accent ? `${accent}99` : '#7c5cff99',
+                boxShadow: accent
+                  ? `0 14px 40px -18px ${accent}66, 0 0 0 1px ${accent}33 inset`
+                  : '0 14px 40px -18px rgba(124,92,255,0.4)',
+              }}
+            >
+              <span
+                className="anim-blink inline-block h-1.5 w-1.5 rounded-full"
+                style={{ background: accent ?? '#7c5cff' }}
+              />
+              {project.appLabel ?? 'Launch interactive prototype'}
+              <span
+                aria-hidden
+                className="text-[14px] transition-transform duration-300 group-hover:translate-x-0.5"
+                style={{ color: accent ?? '#7c5cff' }}
+              >
+                ↗
+              </span>
+            </a>
+          </div>
+        )}
       </header>
 
       {/* Cover hero — suppressed when the project provides any custom
