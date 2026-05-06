@@ -6,6 +6,7 @@ import { asset } from '../lib/asset.js';
 import { accentChipStyle } from '../lib/colors.js';
 import ProjectGallery from '../components/ProjectGallery.jsx';
 import CaseStudy from '../components/CaseStudy.jsx';
+import HackathonEditions from '../components/HackathonEditions.jsx';
 
 export default function Project() {
   const { slug } = useParams();
@@ -60,9 +61,9 @@ export default function Project() {
         )}
       </header>
 
-      {/* Cover hero — suppressed when the project provides a gallery or a
-          full case study so the page reads as a single editorial sequence. */}
-      {!project.gallery && !project.categories && (
+      {/* Cover hero — suppressed when the project provides any custom
+          editorial structure so the page reads as a single sequence. */}
+      {!project.gallery && !project.categories && !project.editions && (
         <figure className="mt-10 overflow-hidden rounded-2xl border border-white/5">
           <img
             src={asset(project.images[0])}
@@ -110,6 +111,16 @@ export default function Project() {
             categories={project.categories}
             accent={accent}
             folderRoot={`media/${project.slug}/`}
+          />
+        </div>
+      )}
+
+      {project.editions && project.editions.length > 0 && (
+        <div className="mt-14 md:mt-16">
+          <HackathonEditions
+            editions={project.editions}
+            stack={project.stack}
+            accent={accent}
           />
         </div>
       )}

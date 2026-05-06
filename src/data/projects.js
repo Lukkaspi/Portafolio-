@@ -171,28 +171,48 @@ export const projects = [
   {
     slug: 'uab-hackathon',
     key: 'H',
-    title: 'UAB Hackathon (2 editions)',
-    role: 'Team lead · Concept · Prototype',
-    year: '2023 & 2024',
+    title: 'UAB Hackathon — 2 Editions',
+    role: 'Hackathon · Team participation',
+    year: '2023 · 2024',
     tag: 'Hackathon · Innovation',
     accent: 'accent',
     summary:
-      'Two consecutive years competing in the UAB engineering hackathon — 48 hours from brief to prototype, with focus on rapid validation.',
-    problem:
-      'Each edition delivers a fresh open-ended brief from an industry partner (sustainability, mobility, healthcare). The challenge is converging on a defensible solution and a working demo within 48 hours, as a team of 4–5.',
-    process: [
-      { title: 'Edition 2023 — sustainability brief', body: 'Designed a deposit-return interface for reusable food-delivery containers. Built a working RFID-tagged container demo and a partner-facing dashboard mockup.' },
-      { title: 'Edition 2024 — urban mobility brief', body: 'Proposed a modular last-mile cargo-bike attachment for small couriers. Built a half-scale CAD model and a benefit-vs-cost case for a target courier persona.' },
-      { title: 'Team role', body: 'Led concept direction and physical prototyping in both editions; coordinated handoffs between CAD, electronics and pitch.' },
-      { title: 'Pitch', body: 'Both years closed with a 5-minute live pitch + Q&A in front of a mixed industry/academic jury.' },
-    ],
-    technical: {
-      Software: 'SolidWorks · Figma · Arduino IDE',
-      Prototyping: 'FDM 3D printing · laser cutting · RFID dev boards',
-    },
-    outcome:
-      'Top-five finish in 2023; finalist mention for the prototype quality in 2024. Both editions sharpened time-boxed scoping and team coordination skills.',
+      'Participation in two consecutive UAB Hackathon editions focused on solving real-world technological challenges proposed by leading companies. Both experiences combined fast problem-solving, collaborative development and technical experimentation under intensive time constraints.',
+    // Editorial layout: editions + stack carry the page.
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
     images: ['images/projects/uab-hackathon/cover.svg'],
+    editions: [
+      {
+        id: '01',
+        partner: "Caixa d'Enginyers",
+        year: '2023',
+        domain: 'Algorithms · Logistics',
+        title: 'Route Optimization Challenge',
+        description:
+          'Development of route optimization systems inside a dedicated software environment provided during the hackathon. The challenge focused on improving route efficiency, data processing and decision-making logic through algorithmic approaches and rapid iteration.',
+        tags: ['Routing', 'Optimization', 'Data Processing', 'Decision Logic'],
+        scope: ['48 h sprint', 'Industry brief', 'Live pitch'],
+      },
+      {
+        id: '02',
+        partner: 'Deloitte',
+        year: '2024',
+        domain: 'Cybersecurity · Pen-testing',
+        title: 'Cybersecurity Challenge',
+        description:
+          'Participation in a cybersecurity-oriented challenge focused on identifying and exploiting vulnerabilities inside controlled systems provided during the event. The experience involved technical analysis, system exploration and collaborative problem-solving within simulated security environments.',
+        tags: ['Vulnerability Analysis', 'System Exploration', 'Pen-testing', 'Sandboxed Env'],
+        scope: ['48 h sprint', 'Industry brief', 'Live pitch'],
+      },
+    ],
+    stack: [
+      { name: 'Java', kind: 'Language' },
+      { name: 'HTML', kind: 'Markup' },
+      { name: 'Python', kind: 'Language' },
+    ],
   },
 
   {
