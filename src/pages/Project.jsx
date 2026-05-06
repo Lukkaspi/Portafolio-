@@ -31,7 +31,7 @@ export default function Project() {
       <header>
         {/* Accent-tinted tag chip — same colour as the project key */}
         <span
-          className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.22em]"
+          className="inline-flex items-center rounded-full px-2.5 py-[3px] text-[10px] font-medium uppercase leading-none tracking-[0.22em]"
           style={accentChipStyle(accent)}
         >
           {project.tag}

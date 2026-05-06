@@ -75,7 +75,7 @@ export default function Home() {
 
           {/* Bottom hint */}
           <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 flex justify-center">
-            <span className="rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-600 backdrop-blur">
+            <span className="rounded-full border border-black/10 bg-white/60 px-3.5 py-[5px] text-[11px] font-medium uppercase leading-none tracking-[0.2em] text-zinc-600 backdrop-blur">
               Hover · Click to open
             </span>
           </div>
