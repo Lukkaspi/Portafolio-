@@ -211,15 +211,16 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
   });
 
   return (
-    <group ref={groupRef} rotation={[-0.12, 0, 0]}>
-      {/* Base plate underneath the keys */}
+    <group ref={groupRef} rotation={[-0.12, 0, 0]} scale={0.88}>
+      {/* Base plate underneath the keys — navy that ties into the hero bg */}
       <mesh position={[0, -KEY_H / 2 - 0.13, 0]} receiveShadow>
-        <boxGeometry args={[totalW + 0.5, 0.12, totalD + 0.5]} />
+        <boxGeometry args={[totalW + 0.55, 0.12, totalD + 0.55]} />
         <meshPhysicalMaterial
-          color="#0d0f14"
-          roughness={0.6}
-          metalness={0.55}
-          clearcoat={0.3}
+          color="#0f1a30"
+          roughness={0.55}
+          metalness={0.5}
+          clearcoat={0.35}
+          clearcoatRoughness={0.6}
         />
       </mesh>
 
@@ -228,11 +229,11 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
         position={[0, -KEY_H / 2 - 0.195, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
-        <planeGeometry args={[totalW + 0.4, totalD + 0.4]} />
+        <planeGeometry args={[totalW + 0.45, totalD + 0.45]} />
         <meshBasicMaterial
           color="#7c5cff"
           transparent
-          opacity={0.08}
+          opacity={0.1}
           toneMapped={false}
         />
       </mesh>
@@ -267,7 +268,7 @@ export default function ProjectKeyboard() {
       <Canvas
         shadows
         dpr={[1, 1.75]}
-        camera={{ position: [0, 6.5, 5.5], fov: 40 }}
+        camera={{ position: [0, 7.6, 7.0], fov: 44 }}
         gl={{ antialias: true, powerPreference: 'high-performance' }}
         onPointerMissed={() => setHoveredSlug(null)}
       >

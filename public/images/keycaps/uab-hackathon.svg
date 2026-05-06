@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" fill="#1a0d10"/>
+  <defs>
+    
+  <radialGradient id="g-ef4444" cx="0.85" cy="0.15" r="0.55">
+    <stop offset="0" stop-color="#ef4444" stop-opacity="0.32"/>
+    <stop offset="1" stop-color="#ef4444" stop-opacity="0"/>
+  </radialGradient>
+
+  </defs>
+  <rect width="512" height="512" fill="#0e1a2e"/>
+  <rect width="512" height="512" fill="url(#g-ef4444)"/>
   
   <text x="256" y="286" text-anchor="middle"
         font-family="Inter, system-ui, sans-serif" font-size="180"
-        font-weight="900" letter-spacing="-4" fill="#e63946">UAB</text>
-  <g stroke="#e63946" stroke-width="6" stroke-linecap="round" opacity="0.9">
-    <!-- Hash mark -->
+        font-weight="900" letter-spacing="-4" fill="#ef4444">UAB</text>
+  <g stroke="#ef4444" stroke-width="6" stroke-linecap="round" opacity="0.9">
     <path d="M 110 346 L 90 406"/>
     <path d="M 160 346 L 140 406"/>
     <path d="M 80 366 L 170 366"/>
@@ -14,10 +22,10 @@
   </g>
   <text x="480" y="406" text-anchor="end"
         font-family="JetBrains Mono, monospace" font-size="22"
-        letter-spacing="3" fill="#ffb3b9" opacity="0.9">HACK 23 · 24</text>
+        letter-spacing="3" fill="#ef4444" opacity="0.9">HACK 23 · 24</text>
   
   <text x="32" y="484" font-family="JetBrains Mono, ui-monospace, monospace"
-        font-size="14" letter-spacing="2" fill="#e63946" opacity="0.45">PORTFOLIO_</text>
+        font-size="14" letter-spacing="2" fill="#ef4444" opacity="0.5">PORTFOLIO_</text>
 
 
 </svg>
