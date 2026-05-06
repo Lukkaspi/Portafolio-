@@ -27,7 +27,8 @@ const SLOTS = [
   { slug: 'intercom-study', col: 1, row: 1 },
   { slug: 'cupra', col: 2, row: 1 },
   { slug: 'urn-packaging', col: 3, row: 1 },
-  { slug: 'dam-beverage', col: 4, row: 1 },
+  // Slot 10 — was dam-beverage; promoted drone-concept here.
+  { slug: 'drone-concept', col: 4, row: 1 },
 ];
 
 // Geometry constants — compact, balanced, fits tall right-column at iPad
