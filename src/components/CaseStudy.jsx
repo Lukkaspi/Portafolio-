@@ -183,21 +183,25 @@ function SingleLargeLayout({ images }) {
 }
 
 function GridDetailLayout({ images }) {
-  // 1 big plus 3 small details — for prototype shoots.
+  // 1 hero + N details. Stays balanced for 1, 2, 3 or more images.
   const [a, ...rest] = images;
   return (
-    <div className="grid grid-cols-12 gap-3 md:gap-5">
-      {a && <Img {...a} className="col-span-12 md:col-span-8 aspect-[4/3]" />}
-      {rest.slice(0, 2).map((img, i) => (
-        <Img
-          key={i}
-          {...img}
-          className="col-span-6 md:col-span-4 aspect-[4/3]"
-        />
-      ))}
-      {rest.slice(2).map((img, i) => (
-        <Img key={i + 2} {...img} className="col-span-6 md:col-span-3 aspect-[3/4]" />
-      ))}
+    <div className="space-y-3 md:space-y-5">
+      {a && <Img {...a} className="aspect-[4/3]" />}
+      {rest.length > 0 && (
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-5">
+          {rest.slice(0, 2).map((img, i) => (
+            <Img key={i} {...img} className="aspect-[4/3]" />
+          ))}
+        </div>
+      )}
+      {rest.slice(2).length > 0 && (
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
+          {rest.slice(2).map((img, i) => (
+            <Img key={i + 2} {...img} className="aspect-[3/4]" />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
