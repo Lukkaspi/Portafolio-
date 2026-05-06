@@ -442,29 +442,36 @@ export const projects = [
     slug: 'intercom-study',
     key: 'I',
     title: 'Intercom Study',
-    role: 'UX research · Product redesign',
-    year: '2023',
+    role: 'Industrial Design · Design Workshop II',
+    year: 'TAD2 · GT05',
     tag: 'UX · Hardware',
     accent: 'accent',
+    collaborators: ['Edda Gómez', 'Mario Torrejón', 'Ingrid López'],
     summary:
-      'A redesign study of a residential building intercom, focused on accessibility for elderly residents and visually-impaired visitors.',
-    problem:
-      'Standard residential intercoms cluster small buttons with low-contrast labels next to a tinny speaker. Field interviews with residents over 70 highlighted severe legibility, audio, and naming issues — frequent failed deliveries and unanswered visits.',
-    process: [
-      { title: 'Field study', body: 'Observed 6 buildings across two neighbourhoods; logged 14 unsuccessful intercom interactions in 3 hours. Interviewed 9 residents and 4 delivery couriers.' },
-      { title: 'Heuristic teardown', body: 'Mapped the existing UI against accessibility guidelines (WCAG 2.1 contrast equivalents, button size, audio SPL).' },
-      { title: 'Concept directions', body: 'Three directions: tactile-first dial, high-contrast list with haptics, and voice-led search. Reviewed with residents in storyboard form.' },
-      { title: 'Resolved concept', body: 'Chosen direction: a high-contrast OLED list with a single rotary encoder, a generous push-to-call button, and an upgraded speaker module. CAD modelled and rendered.' },
-    ],
-    technical: {
-      Display: '2.7" monochrome OLED (concept)',
-      Input: 'Rotary encoder + dedicated call button',
-      Audio: 'Front-facing 1.5 W speaker, MEMS mic',
-      Software: 'SolidWorks · Figma · KeyShot',
-    },
-    outcome:
-      'Concept boards + functional CAD model delivered as the final UX deliverable. Course feedback highlighted the depth of field research and the clarity of the trade-off matrix.',
+      'A redesign study developed for the subject "Design Workshop II", focused on rethinking the interaction, ergonomics and visual identity of a domestic intercom system. The project explores user-centered design methodologies, conceptual development and presentation workflows through a complete industrial design process.',
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
     images: ['images/projects/intercom-study/cover.svg'],
+    drawings: {
+      groups: [
+        {
+          key: 'final-presentation',
+          // No title/kicker → component skips the section header. Just the
+          // intro paragraph above and the embedded presentation panel below.
+          itemKicker: 'Document',
+          stamp: 'TAD2 · PRESENTATION',
+          items: [
+            {
+              title: 'Final Presentation',
+              subtitle: 'TAD2-P1 · GT05',
+              file: 'media/intercom-study/01-final-presentation.pdf',
+            },
+          ],
+        },
+      ],
+    },
   },
 
   {
