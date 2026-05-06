@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-// Mobile = narrow viewport OR coarse pointer (touch-only).
-const QUERY = '(max-width: 768px), (pointer: coarse)';
+// "Mobile" = narrow viewport (phones). Tablets & desktops get the 3D scene.
+// iPads in landscape report ≥1024 CSS px and handle Three.js fine.
+const QUERY = '(max-width: 900px)';
 
 export default function useIsMobile() {
   const [isMobile, setIsMobile] = useState(() => {

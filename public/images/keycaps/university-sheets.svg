@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#1a1814"/>
+  
+  <g stroke="#f1e3c2" stroke-width="1.5" opacity="0.55">
+    <path d="M 60 80 L 452 80"/>
+<path d="M 60 102 L 452 102"/>
+<path d="M 60 124 L 452 124"/>
+<path d="M 60 146 L 452 146"/>
+<path d="M 60 168 L 452 168"/>
+<path d="M 60 190 L 452 190"/>
+<path d="M 60 212 L 452 212"/>
+<path d="M 60 234 L 452 234"/>
+<path d="M 60 256 L 452 256"/>
+<path d="M 60 278 L 452 278"/>
+<path d="M 60 300 L 452 300"/>
+<path d="M 60 322 L 452 322"/>
+<path d="M 60 344 L 452 344"/>
+<path d="M 60 366 L 452 366"/>
+<path d="M 60 388 L 452 388"/>
+<path d="M 60 410 L 452 410"/>
+<path d="M 60 432 L 452 432"/>
+<path d="M 60 454 L 452 454"/>
+  </g>
+  <line x1="92" y1="40" x2="92" y2="452" stroke="#e89090" stroke-width="2" opacity="0.7"/>
+  <text x="286" y="432" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="34"
+        font-weight="700" letter-spacing="6" fill="#f1e3c2">SHEETS · A3</text>
+  
+  <text x="32" y="484" font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="14" letter-spacing="2" fill="#f1e3c2" opacity="0.45">PORTFOLIO_</text>
+
+
+</svg>
