@@ -64,4 +64,9 @@ export const keyStyles = {
     accent: '#eab308', // yellow — gold beverage
     cap: 'images/keycaps/dam-beverage.svg',
   },
+  'drone-concept': {
+    body: NAVY_BODY,
+    accent: '#06b6d4', // cyan — aerospace / R&D
+    cap: 'images/keycaps/drone-concept.svg',
+  },
 };

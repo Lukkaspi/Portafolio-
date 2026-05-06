@@ -631,6 +631,56 @@ export const projects = [
       'Full brand + pack deck plus 1:1 prototype shelf. Used as the cornerstone deliverable in the Product Development & Branding course.',
     images: ['images/projects/dam-beverage/cover.svg'],
   },
+
+  {
+    slug: 'drone-concept',
+    key: 'X', // not bound to a keyboard slot yet — project lives at /#/project/drone-concept
+    title: 'Drone Concept Design',
+    role: 'Industrial Design · R&D',
+    year: 'Upcoming · in development',
+    tag: 'Aerospace · Concept',
+    accent: 'accent',
+    wip: true,
+    summary:
+      'An upcoming industrial design project focused on the conceptual development of a drone platform exploring aerodynamics, lightweight structures and future-oriented mobility systems. The project is currently under development and already incorporates professional product development methodologies including functional analysis, QFD, value analysis, briefing definition, preliminary research and GANTT-based project structuring. Additional technical studies, concept exploration and visual material will be integrated progressively throughout the development process.',
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
+    images: ['images/projects/drone-concept/cover.svg'],
+    methodologies: [
+      {
+        name: 'Briefing',
+        tag: 'Scope',
+        body: 'Defining project scope, hard constraints and design intent. Aligns mission, target user and performance envelope before any concept work begins.',
+      },
+      {
+        name: 'Preliminary Research',
+        tag: 'Discovery',
+        body: 'Benchmarking the drone landscape, mapping technological frontiers and surfacing the unexploited gaps the concept can address.',
+      },
+      {
+        name: 'Functional Analysis',
+        tag: 'Functions',
+        body: 'Mapping every required and desired function of the drone system. Clarifies what the design must deliver before form follows.',
+      },
+      {
+        name: 'QFD · Quality Function Deployment',
+        tag: 'Specification',
+        body: 'Translating user requirements into measurable engineering specifications through a structured priority matrix. Ensures every design decision is anchored in user value.',
+      },
+      {
+        name: 'Value Analysis',
+        tag: 'Optimisation',
+        body: 'Auditing each subsystem for the value it contributes vs the cost it carries — driving toward a leaner, smarter, more focused architecture.',
+      },
+      {
+        name: 'GANTT · Project Structuring',
+        tag: 'Schedule',
+        body: 'Time-boxed phases laid out across the development calendar. Milestones, dependencies and parallel workstreams aligned to delivery.',
+      },
+    ],
+  },
 ];
 
 // Fast lookup by slug (used by /project/:slug)
