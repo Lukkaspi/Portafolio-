@@ -274,12 +274,10 @@ export const projects = [
         title: 'Sentelman Chair · Visual Analysis',
         kicker: 'Form Study',
         description:
-          'A visual decomposition of the Gerrit Rietveld 1963 Sentelman chair: golden-ratio proportional analysis and volumetric breakdown into primitive geometries. Final A3 plate plus the supporting perspective and grid sketches that built it.',
-        layout: 'asymmetric',
+          'A visual decomposition of the Gerrit Rietveld 1963 Sentelman chair: golden-ratio proportional analysis and volumetric breakdown into primitive geometries. Final A3 plate.',
+        layout: 'single-large',
         images: [
           'media/university-sheets/sentelman-chair/01-final-analysis-sheet.png',
-          'media/university-sheets/sentelman-chair/02-perspective-sketch.png',
-          'media/university-sheets/sentelman-chair/03-construction-grid.png',
         ],
       },
       {
@@ -287,12 +285,17 @@ export const projects = [
         title: 'Object Studies',
         kicker: 'Observation',
         description:
-          'Quick analytical drawings of everyday products — a Krups Infinissima coffee machine in elevation and 3/4 perspective, plus a dimensioned door-handle spec with material annotations. Looking at how form, mechanism and ergonomics resolve at the detail scale.',
-        layout: 'masonry',
+          'Analytical drawings of everyday products — a Krups Infinissima coffee machine in elevation and 3/4 perspective, a dimensioned door-handle spec with material annotations, and form/volume studies of curved bodies on architectural bases. Looking at how form, mechanism and ergonomics resolve at the detail scale.',
+        // single-large keeps every plate at its natural aspect, full width,
+        // never aspect-cropped — readability of the technical detail wins
+        // over a denser collage in this section.
+        layout: 'single-large',
         images: [
           'media/university-sheets/object-studies/01-coffee-machine-elevation.png',
           'media/university-sheets/object-studies/02-coffee-machine-perspective.png',
           'media/university-sheets/object-studies/03-door-handle-spec.png',
+          'media/university-sheets/object-studies/04-object-volume-study.png',
+          'media/university-sheets/object-studies/05-object-construction-grid.png',
         ],
       },
       {
