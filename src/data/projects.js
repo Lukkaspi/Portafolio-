@@ -146,31 +146,44 @@ export const projects = [
   {
     slug: 'aparcat',
     key: 'A',
-    title: "Aparca't",
-    role: 'Product · Service design',
-    year: '2023',
-    tag: 'IoT · Urban',
+    title: 'Plaça Lliure',
+    role: 'Industrial Design · Basic Design',
+    year: 'DIBA · M12',
+    tag: 'Urban Mobility · Service Design',
     accent: 'accent',
-    summary:
-      'A street-level smart-parking system pairing a low-power sensor puck with a companion app to surface free spaces in dense city blocks.',
-    problem:
-      "Drivers in Barcelona spend an average of 17 minutes searching for street parking, generating extra emissions and congestion. Existing apps rely on user reports and lose accuracy fast. Aparca't proposes hardware-first ground-truth.",
-    process: [
-      { title: 'Field research', body: 'Mapped occupancy in two Eixample blocks across weekday rush hours. Confirmed crowdsourced apps under-report turnover by ~40%.' },
-      { title: 'Sensor concept', body: 'Magnetometer + ToF dual-sensing puck, IP68, embedded flush in pavement. ESP32 with LoRa uplink for low-bandwidth, low-power operation.' },
-      { title: 'Industrial design', body: 'Disc form, EPDM gasket, anti-tamper torx fasteners. Iterated for snowplough/road-sweep survival.' },
-      { title: 'App UX', body: 'Map view with predictive "likely free in 2 min" tiles, plus paid-zone integration. Designed in Figma, prototyped flows tested with 8 users.' },
-      { title: 'Service blueprint', body: 'End-to-end flow from city procurement through user payment, including maintenance routes and SLA.' },
+    collaborators: [
+      'Carla Clavet',
+      'Joana Coronel',
+      'Sergi Floriach',
+      'Sara Giménez',
     ],
-    technical: {
-      MCU: 'ESP32-S3 with LoRa SX1262',
-      Battery: '3 × AA Li/SOCl₂ — projected ~4 year life',
-      Housing: 'PA12 nylon (SLS prototype) · IP68',
-      App: 'React Native · Mapbox · Figma prototypes',
-    },
-    outcome:
-      'Working sensor + app prototype demonstrated to course faculty. Highlighted as a strong example of hardware/service integration in the year review.',
+    appUrl:
+      'https://diba-aurea-gp12.my.canva.site/copia-de-prototipo-interactivo-de-app-m-vil-pla-a-lliure',
+    appLabel: 'Launch interactive prototype',
+    summary:
+      'A mobility-focused design project developed for the subject "Basic Design", centered around improving parking accessibility in Barcelona through a peer-to-peer parking rental platform. The project explores urban mobility, user interaction and service accessibility through the creation of a digital ecosystem connecting private parking owners with drivers in need of temporary parking solutions.',
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
     images: ['images/projects/aparcat/cover.svg'],
+    drawings: {
+      groups: [
+        {
+          key: 'process-document',
+          // No section title → component skips chapter header.
+          itemKicker: 'Document',
+          stamp: 'DIBA · M12',
+          items: [
+            {
+              title: 'Project Development',
+              subtitle: 'DIBA · M12',
+              file: 'media/aparcat/01-final-presentation.pdf',
+            },
+          ],
+        },
+      ],
+    },
   },
 
   {
@@ -462,9 +475,8 @@ export const projects = [
     drawings: {
       groups: [
         {
-          key: 'final-presentation',
-          // No title/kicker → component skips the section header. Just the
-          // intro paragraph above and the embedded presentation panel below.
+          key: 'group-presentations',
+          // No title/kicker → component skips the section header.
           itemKicker: 'Document',
           stamp: 'TAD2 · PRESENTATION',
           items: [
@@ -472,6 +484,11 @@ export const projects = [
               title: 'Final Presentation',
               subtitle: 'TAD2-P1 · GT05',
               file: 'media/intercom-study/01-final-presentation.pdf',
+            },
+            {
+              title: 'Follow-up Presentation',
+              subtitle: 'TAD2-P2 · GT05',
+              file: 'media/intercom-study/02-followup-presentation.pdf',
             },
           ],
         },
