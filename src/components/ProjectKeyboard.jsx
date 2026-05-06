@@ -79,8 +79,11 @@ function ProjectKey({ slot, project, style, texture, hoveredSlug, setHoveredSlug
     );
 
     if (bodyRef.current) {
-      const featuredBoost = project.featured ? 0.5 : 0;
-      const target = isHovered ? 1.6 : featuredBoost;
+      // Every project key is permanently illuminated. Hover intensifies the
+      // accent without ever turning it off; CUPRA gets a small extra boost
+      // so the featured key still reads as the focal point.
+      const baseline = 0.85 + (project.featured ? 0.25 : 0);
+      const target = isHovered ? baseline + 0.7 : baseline;
       bodyRef.current.material.emissiveIntensity = THREE.MathUtils.lerp(
         bodyRef.current.material.emissiveIntensity,
         target,
@@ -117,17 +120,19 @@ function ProjectKey({ slot, project, style, texture, hoveredSlug, setHoveredSlug
         receiveShadow
       >
         <meshPhysicalMaterial
-          color={style?.body ?? '#1a1d22'}
+          color={style?.body ?? '#0e1a2e'}
           emissive={style?.accent ?? '#000000'}
-          emissiveIntensity={project.featured ? 0.5 : 0.0}
-          roughness={0.42}
-          metalness={0.32}
-          clearcoat={0.45}
-          clearcoatRoughness={0.6}
+          emissiveIntensity={0.85}
+          roughness={0.55}
+          metalness={0.12}
+          clearcoat={0.2}
+          clearcoatRoughness={0.7}
+          transparent
+          opacity={0.95}
         />
       </RoundedBox>
 
-      {/* Engraved cap face */}
+      {/* Engraved cap face — engraving is permanently lit in its accent */}
       {texture && (
         <mesh
           position={[0, KEY_H / 2 + 0.001, 0]}
@@ -137,23 +142,24 @@ function ProjectKey({ slot, project, style, texture, hoveredSlug, setHoveredSlug
           <meshStandardMaterial
             map={texture}
             transparent
-            roughness={0.65}
-            metalness={0.05}
+            roughness={0.7}
+            metalness={0.03}
             emissive={style?.accent ?? '#000'}
             emissiveMap={texture}
-            emissiveIntensity={isHovered ? 0.55 : 0.32}
+            emissiveIntensity={isHovered ? 1.05 : 0.7}
             toneMapped={false}
           />
         </mesh>
       )}
 
-      {/* Soft accent rim along the bottom edge */}
+      {/* Always-on accent rim along the bottom edge — colour reads even when
+          the key is at rest, hover just intensifies it. */}
       <mesh position={[0, -KEY_H / 2 + 0.01, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[KEY_W * 0.85, KEY_D * 0.85]} />
+        <planeGeometry args={[KEY_W * 0.88, KEY_D * 0.88]} />
         <meshBasicMaterial
           color={style?.accent ?? '#7c5cff'}
           transparent
-          opacity={isHovered ? 0.55 : 0.0}
+          opacity={isHovered ? 0.7 : 0.32}
           toneMapped={false}
         />
       </mesh>
@@ -212,28 +218,34 @@ function KeyboardGroup({ hoveredSlug, setHoveredSlug, onSelect }) {
 
   return (
     <group ref={groupRef} rotation={[-0.12, 0, 0]} scale={0.88}>
-      {/* Base plate underneath the keys — navy that ties into the hero bg */}
-      <mesh position={[0, -KEY_H / 2 - 0.13, 0]} receiveShadow>
-        <boxGeometry args={[totalW + 0.55, 0.12, totalD + 0.55]} />
+      {/* Smoked-glass base plate — semi-transparent so the hero stars and
+          gradients bleed through, and so nothing reads as a bright slab. */}
+      <mesh position={[0, -KEY_H / 2 - 0.12, 0]} receiveShadow>
+        <boxGeometry args={[totalW + 0.5, 0.10, totalD + 0.5]} />
         <meshPhysicalMaterial
-          color="#0f1a30"
-          roughness={0.55}
-          metalness={0.5}
-          clearcoat={0.35}
-          clearcoatRoughness={0.6}
+          color="#06101e"
+          transparent
+          opacity={0.42}
+          roughness={0.18}
+          metalness={0.0}
+          clearcoat={0.7}
+          clearcoatRoughness={0.18}
+          reflectivity={0.35}
+          ior={1.4}
         />
       </mesh>
 
-      {/* Underglow ring */}
+      {/* Soft accent under-light. Subtle violet wash so the base plate
+          reads as illuminated from beneath rather than a dark void. */}
       <mesh
-        position={[0, -KEY_H / 2 - 0.195, 0]}
+        position={[0, -KEY_H / 2 - 0.19, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
-        <planeGeometry args={[totalW + 0.45, totalD + 0.45]} />
+        <planeGeometry args={[totalW + 0.6, totalD + 0.6]} />
         <meshBasicMaterial
           color="#7c5cff"
           transparent
-          opacity={0.1}
+          opacity={0.14}
           toneMapped={false}
         />
       </mesh>
@@ -274,19 +286,20 @@ export default function ProjectKeyboard() {
       >
         <color attach="background" args={['#00000000']} />
 
-        <ambientLight intensity={0.45} />
+        <ambientLight intensity={0.32} />
         <directionalLight
           position={[6, 9, 5]}
-          intensity={1.2}
+          intensity={0.9}
           castShadow
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
         />
-        <pointLight position={[-7, 3, -5]} intensity={0.5} color="#7c5cff" />
-        <pointLight position={[7, 2, -4]} intensity={0.35} color="#c75a2a" />
+        <pointLight position={[-7, 3, -5]} intensity={0.55} color="#7c5cff" />
+        <pointLight position={[7, 2, -4]} intensity={0.4} color="#5b9eff" />
 
         <Suspense fallback={null}>
-          <Environment preset="city" environmentIntensity={0.4} />
+          {/* Dim environment so reflections stay dark and smoky, never white */}
+          <Environment preset="night" environmentIntensity={0.2} />
           <KeyboardGroup
             hoveredSlug={hoveredSlug}
             setHoveredSlug={setHoveredSlug}
@@ -294,10 +307,11 @@ export default function ProjectKeyboard() {
           />
           <ContactShadows
             position={[0, -0.45, 0]}
-            opacity={0.55}
+            opacity={0.45}
             scale={9}
-            blur={2.4}
+            blur={2.6}
             far={5}
+            color="#000"
           />
         </Suspense>
       </Canvas>
