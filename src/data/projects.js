@@ -55,46 +55,54 @@ export const projects = [
     slug: 'car-sketches',
     key: 'C',
     title: 'Automotive Sketches',
-    role: 'Sketching · Visual development',
+    role: 'Procreate · iPad',
     year: '2022 — 2025',
     tag: 'Automotive · Sketching',
     accent: 'accent',
     summary:
-      'A curated selection of automotive studies — proportion blockouts, tonal value studies and personal concept directions, built up across three years of practice.',
-    problem:
-      'Every concept project starts on paper. The goal of this body of work is to keep a daily-ish habit of fast, confident automotive sketching so that proportion, stance and surface decisions can be reasoned about visually before any CAD or surfacing tool is opened.',
-    process: [
-      { title: 'Daily warm-ups', body: '5–10 minute thumbnails in marker and ballpoint to keep line confidence sharp.' },
-      { title: 'Reference studies', body: 'Front three-quarter blockouts of contemporary performance cars — Lamborghini, Porsche, McLaren — to internalise stance, dash-to-axle and DLO graphics.' },
-      { title: 'Tonal value', body: 'Pencil shading passes to study how light falls across a body — separating volumes, glass and aero detail without colour.' },
-      { title: 'Concept direction', body: 'From learned references, sketches push toward original concept directions — mid-engined long-tail studies, raised-cab GTs, etc.' },
-      { title: 'Curated highlights', body: 'Best pages are reworked digitally with shadow passes and accent colour for portfolio use.' },
-    ],
+      'A collection of rapid automotive explorations created in Procreate for iPad. Short-form sketches driven by instinct, movement and passion for automotive design.',
+    // Editorial presentation: only the gallery renders for this project.
+    problem: null,
+    process: null,
     technical: null,
-    outcome:
-      'A consistent personal visual language that now feeds directly into concept projects — including the CUPRA case study. Most sketches are produced in under 15 minutes.',
+    outcome: null,
     images: ['images/projects/car-sketches/cover.svg'],
     gallery: [
       {
         src: 'media/IMG_2425.png',
         tag: 'Hypercar Exploration',
-        title: 'Huracán STO — Front 3/4 Blockout',
+        title: 'Lamborghini Huracán STO',
         caption:
           'A gridded under-drawing exploring the STO\'s wedge stance, dihedral nose vents and aggressive cab-forward proportions. The grid is kept in the final to expose the underlying construction.',
+        specs: {
+          Power: '640 CV',
+          Engine: '5.2 L NA V10',
+          Production: '2021 — Present',
+        },
       },
       {
         src: 'media/IMG_2392.png',
         tag: 'GT Performance Study',
-        title: '911 Turbo — Tonal Value Study',
+        title: 'Porsche 911 Turbo',
         caption:
           'Pencil tonal study of the 992 silhouette. Captures the iconic teardrop greenhouse, blistered rear haunches and the deltoid wheel arches that anchor the 911\'s design DNA.',
+        specs: {
+          Power: '580 CV',
+          Engine: '3.8 L Twin-Turbo Flat-Six',
+          Production: '2020 — Present',
+        },
       },
       {
         src: 'media/IMG_2391.png',
-        tag: 'Personal Concept Direction',
-        title: 'GCO LT — Long-Tail Hypercar',
+        tag: 'Long-Tail Concept',
+        title: 'McLaren 600LT',
         caption:
-          'A personal concept: a low-slung mid-engined hypercar with long-tail proportions, dihedral door cuts and aero-driven side intakes. Explored under a McLaren-language brief.',
+          'Side blockout under a long-tail brief: low-slung mid-engined proportions, dihedral door cuts and aero-driven side intakes. A personal interpretation of the LT lineage.',
+        specs: {
+          Power: '600 CV',
+          Engine: '3.8 L Twin-Turbo V8',
+          Production: '2018 — 2020',
+        },
       },
     ],
   },

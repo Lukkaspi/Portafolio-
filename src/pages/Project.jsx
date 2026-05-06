@@ -48,40 +48,48 @@ export default function Project() {
         </p>
       </header>
 
-      <figure className="mt-10 overflow-hidden rounded-2xl border border-white/5">
-        <img
-          src={asset(project.images[0])}
-          alt={project.title}
-          loading="eager"
-          decoding="async"
-          className="h-auto w-full"
-        />
-      </figure>
+      {/* Cover hero — suppressed when the project provides a gallery so the
+          page reads as a single editorial sequence rather than cover + grid. */}
+      {!project.gallery && (
+        <figure className="mt-10 overflow-hidden rounded-2xl border border-white/5">
+          <img
+            src={asset(project.images[0])}
+            alt={project.title}
+            loading="eager"
+            decoding="async"
+            className="h-auto w-full"
+          />
+        </figure>
+      )}
 
-      <Section title="Problem">
-        <p className="leading-relaxed text-zinc-300">{project.problem}</p>
-      </Section>
+      {project.problem && (
+        <Section title="Problem">
+          <p className="leading-relaxed text-zinc-300">{project.problem}</p>
+        </Section>
+      )}
 
-      <Section title="Process">
-        <ol className="space-y-5">
-          {project.process.map((step, i) => (
-            <li key={i} className="card p-5">
-              <div className="flex items-baseline gap-3">
-                <span className="font-mono text-xs text-accent-400">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3 className="text-base font-semibold text-white">{step.title}</h3>
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-300">{step.body}</p>
-            </li>
-          ))}
-        </ol>
-      </Section>
+      {project.process && project.process.length > 0 && (
+        <Section title="Process">
+          <ol className="space-y-5">
+            {project.process.map((step, i) => (
+              <li key={i} className="card p-5">
+                <div className="flex items-baseline gap-3">
+                  <span className="font-mono text-xs text-accent-400">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="text-base font-semibold text-white">{step.title}</h3>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-300">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </Section>
+      )}
 
       {project.gallery && project.gallery.length > 0 && (
-        <Section title="Selected Works">
+        <div className="mt-14">
           <ProjectGallery items={project.gallery} accent={accent} />
-        </Section>
+        </div>
       )}
 
       {!project.gallery && project.images.length > 1 && (
@@ -114,9 +122,11 @@ export default function Project() {
         </Section>
       )}
 
-      <Section title="Outcome">
-        <p className="leading-relaxed text-zinc-300">{project.outcome}</p>
-      </Section>
+      {project.outcome && (
+        <Section title="Outcome">
+          <p className="leading-relaxed text-zinc-300">{project.outcome}</p>
+        </Section>
+      )}
 
       <div className="mt-16 border-t border-white/5 pt-8">
         <Link to="/" className="btn-ghost">← All projects</Link>

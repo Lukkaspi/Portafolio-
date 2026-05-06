@@ -1,5 +1,5 @@
 import { asset } from '../lib/asset.js';
-import { accentChipStyle } from '../lib/colors.js';
+import { accentChipStyle, hexToRgba } from '../lib/colors.js';
 
 // Premium dark-cinematic gallery for project case studies. Each item
 // alternates between left-aligned and right-aligned, with a large
@@ -28,10 +28,11 @@ export default function ProjectGallery({ items, accent = '#7c5cff' }) {
             }`}
           >
             <figure
-              className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-100 via-white to-zinc-200 p-4 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.65)] transition-all duration-500 ease-out md:w-[58%] md:p-6"
+              className="anim-float-gentle relative w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-100 via-white to-zinc-200 p-4 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.65)] transition-all duration-500 ease-out md:w-[58%] md:p-6"
               style={{
                 boxShadow:
                   '0 30px 80px -30px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.06) inset',
+                animationDelay: `${i * 1.2}s`,
               }}
             >
               {/* Accent halo — fades in on hover */}
@@ -78,6 +79,29 @@ export default function ProjectGallery({ items, accent = '#7c5cff' }) {
               <p className="mt-3 max-w-md text-sm leading-relaxed text-zinc-300/90">
                 {item.caption}
               </p>
+
+              {/* Premium spec sheet — minimal type, no card chrome, accent-led labels */}
+              {item.specs && (
+                <dl className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 md:max-w-md">
+                  {Object.entries(item.specs).map(([k, v]) => (
+                    <div
+                      key={k}
+                      className="border-l pl-3"
+                      style={{ borderColor: hexToRgba(accent, 0.45) }}
+                    >
+                      <dt
+                        className="text-[9px] font-semibold uppercase leading-none tracking-[0.22em]"
+                        style={{ color: accent }}
+                      >
+                        {k}
+                      </dt>
+                      <dd className="mt-1.5 text-sm font-medium leading-tight text-white">
+                        {v}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
             </div>
           </article>
         );
