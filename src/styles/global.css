@@ -90,42 +90,48 @@
   100% { opacity: 0.95; }
 }
 
-/* ---------- Pac-Man divider ---------- */
+/* ---------- Pac-Man divider ----------
+   Keyframes animate only `top` / `opacity`. Centring is fixed via
+   `transform: translate(-50%, -50%)` in the static rules so the
+   animation never fights any Tailwind transform utility on the same
+   element. */
+
 @keyframes pacRun {
-  0%   { transform: translate(-50%, -50%); top: -4%; }
-  100% { transform: translate(-50%, -50%); top: 104%; }
+  0%   { top: -5%; }
+  100% { top: 105%; }
 }
 
-/* Each dot fades briefly when Pac-Man crosses it, then resets. */
 @keyframes eat {
-  0%   { opacity: 1; transform: translateX(-50%) scale(1); }
-  4%   { opacity: 1; transform: translateX(-50%) scale(1); }
-  6%   { opacity: 0; transform: translateX(-50%) scale(0.4); }
-  100% { opacity: 0; transform: translateX(-50%) scale(0.4); }
+  0%, 4%   { opacity: 1; }
+  6%, 100% { opacity: 0; }
 }
 
-.pacman {
-  animation-name: pacRun;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.55));
+.pacman-runner {
+  position: absolute;
+  left: 50%;
+  top: -5%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
+  animation: pacRun 5s linear infinite;
+  will-change: top;
 }
 
 .pacman-dot {
+  position: absolute;
+  left: 50%;
   width: 5px;
   height: 5px;
-  margin-top: -2.5px;
   background: #fde68a;
   border-radius: 9999px;
-  animation-name: eat;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  transform: translate(-50%, -50%);
   box-shadow: 0 0 6px rgba(253, 230, 138, 0.6);
+  animation: eat 5s linear infinite;
+  will-change: opacity;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pacman, .pacman-dot { animation: none !important; }
-  .pacman { top: 50% !important; }
+  .pacman-runner, .pacman-dot { animation: none !important; }
+  .pacman-runner { top: 50% !important; }
 }
 
 .anim-fade-up {
