@@ -7,6 +7,7 @@ import { accentChipStyle } from '../lib/colors.js';
 import ProjectGallery from '../components/ProjectGallery.jsx';
 import CaseStudy from '../components/CaseStudy.jsx';
 import HackathonEditions from '../components/HackathonEditions.jsx';
+import TechnicalDrawings from '../components/TechnicalDrawings.jsx';
 
 export default function Project() {
   const { slug } = useParams();
@@ -63,7 +64,7 @@ export default function Project() {
 
       {/* Cover hero — suppressed when the project provides any custom
           editorial structure so the page reads as a single sequence. */}
-      {!project.gallery && !project.categories && !project.editions && (
+      {!project.gallery && !project.categories && !project.editions && !project.drawings && (
         <figure className="mt-10 overflow-hidden rounded-2xl border border-white/5">
           <img
             src={asset(project.images[0])}
@@ -122,6 +123,12 @@ export default function Project() {
             stack={project.stack}
             accent={accent}
           />
+        </div>
+      )}
+
+      {project.drawings && project.drawings.groups && project.drawings.groups.length > 0 && (
+        <div className="mt-16 md:mt-20">
+          <TechnicalDrawings groups={project.drawings.groups} accent={accent} />
         </div>
       )}
 

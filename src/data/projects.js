@@ -334,27 +334,108 @@ export const projects = [
     slug: 'technical-drawings',
     key: 'T',
     title: 'Technical Drawings',
-    role: 'CAD · Drafting',
-    year: '2022 — 2025',
+    role: 'Engineering · Technical Documentation',
+    year: 'Design and Technical Representation',
     tag: 'CAD · Mechanical',
     accent: 'accent',
     summary:
-      'A selection of dimensioned mechanical drawings — single parts, sub-assemblies, and full exploded views — produced to ISO standards.',
-    problem:
-      'Industrial design without rigorous drafting falls apart at the manufacturing handoff. This collection demonstrates clean projection conventions, tolerancing, and exploded-view discipline.',
-    process: [
-      { title: 'Modelling', body: 'Parts modelled parametrically in SolidWorks/Fusion 360 with feature trees structured for downstream edits.' },
-      { title: 'Drafting', body: 'Drawings produced with ISO first-angle projection, layered for outlines, hidden, centreline and dimensions.' },
-      { title: 'Tolerancing', body: 'GD&T applied where functional fits demand it (clearance, locational, interference). Surface finish callouts on machined faces.' },
-    ],
-    technical: {
-      Standards: 'ISO 128 · ISO 5455 · GD&T per ISO 1101',
-      Software: 'SolidWorks · Fusion 360 · AutoCAD',
-      Outputs: 'PDF + DWG, A3/A2 sheets',
-    },
-    outcome:
-      'A growing reference set used to onboard team-mates on group projects. Drawings have been used directly to brief external machinists for prototype parts.',
+      'A complete technical drawing project developed for the subject "Design and Technical Representation", focused on the engineering and construction documentation of a water suction pump system. The project includes detailed technical plans, dimensional studies and mechanical representation workflows developed through professional drafting methodologies.',
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
     images: ['images/projects/technical-drawings/cover.svg'],
+    drawings: {
+      groups: [
+        {
+          key: 'assembly',
+          title: 'General Assembly',
+          kicker: 'Overall',
+          description:
+            'Full-system documentation: exploded view, two assembly plates and a section reference. Establishes how the parts come together and how the pump is meant to be read at a glance.',
+          items: [
+            {
+              title: 'Exploded View',
+              subtitle: 'Vista Explosionada',
+              file: 'media/technical-drawings/assembly/01-exploded-view.pdf',
+            },
+            {
+              title: 'Assembly · Plate 1',
+              subtitle: 'P1 · Plano Pieza 1',
+              file: 'media/technical-drawings/assembly/02-assembly-plan-1.pdf',
+            },
+            {
+              title: 'Assembly · Plate 2',
+              subtitle: 'P1 · Plano Pieza 2',
+              file: 'media/technical-drawings/assembly/03-assembly-plan-2.pdf',
+            },
+            {
+              title: 'Section View',
+              subtitle: 'P2 · Plano 3.1',
+              file: 'media/technical-drawings/assembly/04-section-view.pdf',
+            },
+          ],
+        },
+        {
+          key: 'body',
+          title: 'Body & Cover',
+          kicker: 'Housing',
+          description:
+            'The pump enclosure: outer body, cover plate and a detailed sectional study. Where the mechanical core lives.',
+          items: [
+            {
+              title: 'Body',
+              subtitle: 'Plànol Cos',
+              file: 'media/technical-drawings/body/01-body.pdf',
+            },
+            {
+              title: 'Body Cover',
+              subtitle: 'Plànol Tapa Cos',
+              file: 'media/technical-drawings/body/02-body-cap.pdf',
+            },
+            {
+              title: 'Section Detail',
+              subtitle: 'P2 · E2',
+              file: 'media/technical-drawings/body/03-section-detail.pdf',
+            },
+          ],
+        },
+        {
+          key: 'components',
+          title: 'Component Parts',
+          kicker: 'Mechanism',
+          description:
+            'Individual mechanical components — piston, pin, connecting rod, eccentric and motor. Each plate carries its own dimensions, tolerances and surface-finish callouts.',
+          items: [
+            {
+              title: 'Piston',
+              subtitle: 'Pieza 4 · Émbolo',
+              file: 'media/technical-drawings/components/01-piston.pdf',
+            },
+            {
+              title: 'Pin',
+              subtitle: 'Pieza 5 · Bulón',
+              file: 'media/technical-drawings/components/02-pin.pdf',
+            },
+            {
+              title: 'Connecting Rod',
+              subtitle: 'Pieza 6 · Biela',
+              file: 'media/technical-drawings/components/03-connecting-rod.pdf',
+            },
+            {
+              title: 'Eccentric',
+              subtitle: 'Pieza 9 · Excéntrica',
+              file: 'media/technical-drawings/components/04-eccentric.pdf',
+            },
+            {
+              title: 'Motor',
+              subtitle: 'Pieza 10 · Motor',
+              file: 'media/technical-drawings/components/05-motor.pdf',
+            },
+          ],
+        },
+      ],
+    },
   },
 
   {
