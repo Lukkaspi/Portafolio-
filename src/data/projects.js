@@ -281,31 +281,76 @@ export const projects = [
     slug: 'urn-packaging',
     key: 'R',
     title: 'Urn Packaging',
-    role: 'Packaging · Material study',
-    year: '2024',
+    role: 'Graphic Design · Full-semester project',
+    year: '2nd-year · 2023',
     tag: 'Packaging · Memorial',
     accent: 'accent',
+    collaborators: ['Ingrid López', 'Pau Alonso'],
     summary:
-      'A respectful, fully biodegradable shipping enclosure for funeral urns — quiet, dignified, and compostable.',
-    problem:
-      'Most funeral urns ship in generic foam-lined cardboard. The brief was a packaging system that protects the urn during transit, opens with grace at delivery, and leaves no waste behind.',
-    process: [
-      { title: 'Sensitivity research', body: 'Interviews with two family-run funeral homes and a logistics partner to understand handover ritual and carrier constraints.' },
-      { title: 'Material exploration', body: 'Compared moulded pulp, cork inlays, and mycelium foam against drop-test, cost, and end-of-life criteria.' },
-      { title: 'Structural design', body: 'Designed a two-shell moulded-pulp cradle with a cork rim, sized for three urn families. Closure uses fabric ribbon tabs instead of tape.' },
-      { title: 'Drop testing', body: 'ASTM D5276–style 1-corner / 3-edge / 6-face drop sequence on three prototypes. Passed without urn damage.' },
-      { title: 'Unboxing storyboard', body: 'Filmed an unboxing prototype to capture the calm, ritual-respecting flow of the opening sequence.' },
-    ],
-    technical: {
-      Cushioning: 'Moulded pulp shells + cork rim',
-      Outer: 'Uncoated recycled corrugated cardboard',
-      Closure: 'Cotton ribbon, no plastic tape',
-      'End of life': '100% home-compostable',
-      Software: 'SolidWorks · Illustrator · Premiere',
-    },
-    outcome:
-      'Working prototype, drop-test report, and an unboxing video shown at the course final review. Selected for the faculty showcase.',
+      'Urn Packaging was developed throughout an entire semester during the second-year Graphic Design course. The project explores the complete packaging development process, from early research and symbolism studies to sketches, technical plans, physical mockups and final renders.',
+    // Editorial case study — no Problem/Process/Outcome; the categories
+    // below carry the page in a cinematic six-act sequence.
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
     images: ['images/projects/urn-packaging/cover.svg'],
+    categories: [
+      {
+        key: 'study',
+        title: 'Study',
+        kicker: 'Research',
+        description:
+          'Sensitivity research and competitor audit grounding the brief in real ritual, carrier constraints and material end-of-life.',
+        layout: 'asymmetric',
+        images: [],
+      },
+      {
+        key: 'symbolism',
+        title: 'Symbolism',
+        kicker: 'Visual Code',
+        description:
+          'Translating memorial archetypes into a coherent symbolic language — chosen marks for closure, cycle and return.',
+        layout: 'hero-detail',
+        images: [],
+      },
+      {
+        key: 'sketches',
+        title: 'Sketches',
+        kicker: 'Ideation',
+        description:
+          'Form exploration and cradle studies in graphite, marker and quick blockouts.',
+        layout: 'masonry',
+        images: [],
+      },
+      {
+        key: 'plans',
+        title: 'Technical Plans',
+        kicker: 'Construction',
+        description:
+          'Dimensioned drawings, exploded views and unfold sequences for the shells, ribbon closure and outer carton.',
+        layout: 'single-large',
+        images: [],
+      },
+      {
+        key: 'mockup',
+        title: 'Mockup',
+        kicker: 'Prototype',
+        description:
+          'Physical proof of concept — moulded pulp, cork rim and ribbon closure under drop-test conditions.',
+        layout: 'grid-detail',
+        images: [],
+      },
+      {
+        key: 'renders',
+        title: 'Renders',
+        kicker: 'Visualisation',
+        description:
+          'Cinematic stills capturing the full packaging system in unboxing context.',
+        layout: 'cinematic',
+        images: [],
+      },
+    ],
   },
 
   {
