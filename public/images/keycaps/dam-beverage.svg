@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#14090a"/>
+  
+  <!-- Bottle silhouette -->
+  <g fill="#d4af37">
+    <path d="M 234 90
+             L 278 90
+             L 278 150
+             C 278 170, 316 180, 316 230
+             L 316 380
+             C 316 410, 296 430, 256 430
+             C 216 430, 196 410, 196 380
+             L 196 230
+             C 196 180, 234 170, 234 150 Z"
+          opacity="0.9"/>
+  </g>
+  <rect x="206" y="240" width="100" height="100" fill="#1a0c08" opacity="0.92"/>
+  <text x="256" y="305" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="38"
+        font-weight="900" letter-spacing="6" fill="#d4af37">DAM</text>
+  <text x="256" y="442" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="20"
+        font-weight="700" letter-spacing="8" fill="#f0d790">SESSIONABLE 0.0</text>
+  
+  <text x="32" y="484" font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="14" letter-spacing="2" fill="#d4af37" opacity="0.45">PORTFOLIO_</text>
+
+
+</svg>
