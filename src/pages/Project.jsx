@@ -5,6 +5,7 @@ import { keyStyles } from '../data/keyStyles.js';
 import { asset } from '../lib/asset.js';
 import { accentChipStyle } from '../lib/colors.js';
 import ProjectGallery from '../components/ProjectGallery.jsx';
+import CaseStudy from '../components/CaseStudy.jsx';
 
 export default function Project() {
   const { slug } = useParams();
@@ -46,11 +47,22 @@ export default function Project() {
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
           {project.summary}
         </p>
+
+        {/* Collaboration credit — integrated naturally below the intro,
+            not a footer note. Shows only when collaborators are listed. */}
+        {project.collaborators && project.collaborators.length > 0 && (
+          <p className="mt-5 max-w-2xl text-[11px] uppercase leading-relaxed tracking-[0.22em] text-zinc-500">
+            In collaboration with{' '}
+            <span className="text-zinc-200">
+              {project.collaborators.join(' · ')}
+            </span>
+          </p>
+        )}
       </header>
 
-      {/* Cover hero — suppressed when the project provides a gallery so the
-          page reads as a single editorial sequence rather than cover + grid. */}
-      {!project.gallery && (
+      {/* Cover hero — suppressed when the project provides a gallery or a
+          full case study so the page reads as a single editorial sequence. */}
+      {!project.gallery && !project.categories && (
         <figure className="mt-10 overflow-hidden rounded-2xl border border-white/5">
           <img
             src={asset(project.images[0])}
@@ -89,6 +101,16 @@ export default function Project() {
       {project.gallery && project.gallery.length > 0 && (
         <div className="mt-14">
           <ProjectGallery items={project.gallery} accent={accent} />
+        </div>
+      )}
+
+      {project.categories && project.categories.length > 0 && (
+        <div className="mt-16 md:mt-20">
+          <CaseStudy
+            categories={project.categories}
+            accent={accent}
+            folderRoot={`media/${project.slug}/`}
+          />
         </div>
       )}
 
