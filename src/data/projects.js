@@ -219,26 +219,112 @@ export const projects = [
     slug: 'university-sheets',
     key: 'U',
     title: 'University Sheets',
-    role: 'Technical communication',
+    role: 'Academic · Visual development',
     year: '2022 — 2025',
     tag: 'Academic · Documentation',
     accent: 'accent',
     summary:
-      'Curated set of academic deliverable sheets — concept boards, dimensioned drawings, and process pages — used across coursework.',
-    problem:
-      'A clean, consistent sheet template is rare in undergraduate work. The goal: build a personal house-style for handing in projects that reads as professional out of the box and survives black-and-white printing.',
-    process: [
-      { title: 'Grid system', body: '12-column A3 master grid, with strict 8-pt baseline. Variants for landscape technical drawings vs. portrait concept boards.' },
-      { title: 'Type & colour', body: 'Two-typeface pairing (display + neutral mono), monochrome with a single accent. Tested for legibility in print at 80% scale.' },
-      { title: 'Diagram library', body: 'Reusable callouts, arrows, and exploded-view conventions kept in a central Illustrator library.' },
-    ],
-    technical: {
-      Tooling: 'Adobe Illustrator · InDesign',
-      Format: 'A3 master + A4 derivative',
-    },
-    outcome:
-      'House-style now reused across 12+ courses. Faculty have referenced the sheets as examples of strong technical communication.',
+      'An evolving archive of academic sheets, technical boards and visual development work produced throughout the degree — from early proportion exercises to finished editorial plates. A cross-section of how form, image and language are studied across courses.',
+    problem: null,
+    process: null,
+    technical: null,
+    outcome: null,
     images: ['images/projects/university-sheets/cover.svg'],
+    categories: [
+      {
+        key: 'pop-art',
+        title: 'Pop-Art · Color Theory',
+        kicker: 'Visual Composition',
+        description:
+          'A Warhol-coded chromatic exercise: a vinyl player rendered in four palettes — analogous, triadic, complementary divided and tetradic. The final composition was selected for the Callao billboard in Madrid as part of the EXAR-UPC programme.',
+        layout: 'asymmetric',
+        images: [
+          'media/university-sheets/pop-art/01-pop-art-poster-final.png',
+          'media/university-sheets/pop-art/02-callao-billboard.png',
+          'media/university-sheets/pop-art/03-color-theory-grid.png',
+        ],
+      },
+      {
+        key: 'matchbox',
+        title: "Matchbox · Warhol's Soup Tribute",
+        kicker: 'Graphic Design',
+        description:
+          'A New-Year matchbox redesigned as a Campbell\'s Soup tribute — full unfold template, printed plates with an Andy Warhol quote on the back, and the final hand-assembled object. A study in iconic graphic translation and printable surface design.',
+        layout: 'asymmetric',
+        images: [
+          'media/university-sheets/matchbox/01-printed-plates.png',
+          'media/university-sheets/matchbox/02-unfold-template.png',
+          'media/university-sheets/matchbox/03-finished-matchbox.png',
+          'media/university-sheets/matchbox/04-matchbox-pair.png',
+        ],
+      },
+      {
+        key: 'typography',
+        title: 'Typography · Perspective Plate',
+        kicker: 'Type Composition',
+        description:
+          'Black-and-white plate exploring how a typographic block bends in perspective when projected onto an architectural plane. A discipline of structure, contrast and visual rhythm.',
+        layout: 'single-large',
+        images: [
+          'media/university-sheets/typography/01-typography-perspective.png',
+        ],
+      },
+      {
+        key: 'sentelman-chair',
+        title: 'Sentelman Chair · Visual Analysis',
+        kicker: 'Form Study',
+        description:
+          'A visual decomposition of the Gerrit Rietveld 1963 Sentelman chair: golden-ratio proportional analysis and volumetric breakdown into primitive geometries. Final A3 plate plus the supporting perspective and grid sketches that built it.',
+        layout: 'asymmetric',
+        images: [
+          'media/university-sheets/sentelman-chair/01-final-analysis-sheet.png',
+          'media/university-sheets/sentelman-chair/02-perspective-sketch.png',
+          'media/university-sheets/sentelman-chair/03-construction-grid.png',
+        ],
+      },
+      {
+        key: 'object-studies',
+        title: 'Object Studies',
+        kicker: 'Observation',
+        description:
+          'Quick analytical drawings of everyday products — a Krups Infinissima coffee machine in elevation and 3/4 perspective, plus a dimensioned door-handle spec with material annotations. Looking at how form, mechanism and ergonomics resolve at the detail scale.',
+        layout: 'masonry',
+        images: [
+          'media/university-sheets/object-studies/01-coffee-machine-elevation.png',
+          'media/university-sheets/object-studies/02-coffee-machine-perspective.png',
+          'media/university-sheets/object-studies/03-door-handle-spec.png',
+        ],
+      },
+      {
+        key: 'furniture-development',
+        title: 'Furniture Development',
+        kicker: 'Form & Construction',
+        description:
+          'A spread across furniture explorations — chair perspective studies, table typology series ("Mesa piano · medusa · dalí · proporción áurea · árbol"), the collaborative T-BOOK bench inspired by stacked books, kitchen-cabinet construction details and an interior perspective drawing.',
+        layout: 'masonry',
+        images: [
+          'media/university-sheets/furniture-development/01-tbook-bench-final.png',
+          'media/university-sheets/furniture-development/02-furniture-concepts.png',
+          'media/university-sheets/furniture-development/03-table-explorations.png',
+          'media/university-sheets/furniture-development/04-chair-sketches.png',
+          'media/university-sheets/furniture-development/05-cabinet-construction.png',
+          'media/university-sheets/furniture-development/06-interior-perspective.png',
+        ],
+      },
+      {
+        key: 'bicycle-furniture',
+        title: 'Bicycle-Integrated Furniture',
+        kicker: 'Hybrid Design',
+        description:
+          'An ideation series for furniture that incorporates a bicycle — bench, stool, TV cabinet and shelf concepts that solve indoor bike storage as a piece of domestic design rather than as an accessory. Includes a small cable-cover study from the same brief.',
+        layout: 'asymmetric',
+        images: [
+          'media/university-sheets/bicycle-furniture/01-bicycle-furniture-grid.png',
+          'media/university-sheets/bicycle-furniture/02-tv-cabinet-development.png',
+          'media/university-sheets/bicycle-furniture/03-cable-accessory.png',
+        ],
+      },
+    ],
   },
 
   {
