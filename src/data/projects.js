@@ -264,7 +264,7 @@ export const projects = [
         kicker: 'Visual Composition',
         description:
           'A Warhol-coded chromatic exercise: a vinyl player rendered in four palettes — analogous, triadic, complementary divided and tetradic. The final composition was selected for the Callao billboard in Madrid as part of the EXAR-UPC programme.',
-        layout: 'asymmetric',
+        layout: 'single-large',
         images: [
           'media/university-sheets/pop-art/01-pop-art-poster-final.png',
           'media/university-sheets/pop-art/02-callao-billboard.png',
@@ -277,7 +277,7 @@ export const projects = [
         kicker: 'Graphic Design',
         description:
           'A New-Year matchbox redesigned as a Campbell\'s Soup tribute — full unfold template, printed plates with an Andy Warhol quote on the back, and the final hand-assembled object. A study in iconic graphic translation and printable surface design.',
-        layout: 'asymmetric',
+        layout: 'single-large',
         images: [
           'media/university-sheets/matchbox/01-printed-plates.png',
           'media/university-sheets/matchbox/02-unfold-template.png',
@@ -331,7 +331,7 @@ export const projects = [
         kicker: 'Form & Construction',
         description:
           'A spread across furniture explorations — chair perspective studies, table typology series ("Mesa piano · medusa · dalí · proporción áurea · árbol"), the collaborative T-BOOK bench inspired by stacked books, kitchen-cabinet construction details and an interior perspective drawing.',
-        layout: 'masonry',
+        layout: 'single-large',
         images: [
           'media/university-sheets/furniture-development/01-tbook-bench-final.png',
           'media/university-sheets/furniture-development/02-furniture-concepts.png',
@@ -347,7 +347,7 @@ export const projects = [
         kicker: 'Hybrid Design',
         description:
           'An ideation series for furniture that incorporates a bicycle — bench, stool, TV cabinet and shelf concepts that solve indoor bike storage as a piece of domestic design rather than as an accessory. Includes a small cable-cover study from the same brief.',
-        layout: 'asymmetric',
+        layout: 'single-large',
         images: [
           'media/university-sheets/bicycle-furniture/01-bicycle-furniture-grid.png',
           'media/university-sheets/bicycle-furniture/02-tv-cabinet-development.png',
