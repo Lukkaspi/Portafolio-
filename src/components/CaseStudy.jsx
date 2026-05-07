@@ -162,9 +162,12 @@ function MasonryLayout({ images }) {
 }
 
 function SingleLargeLayout({ images }) {
-  // Full-bleed technical plates stacked.
+  // Full-bleed plates with smart height cap. Each image renders at its
+  // natural aspect ratio — never cropped. Landscape sheets fill the
+  // figure width; portrait sheets cap at 85 vh and centre horizontally
+  // so they never dominate the viewport.
   return (
-    <div className="space-y-3 md:space-y-5">
+    <div className="space-y-4 md:space-y-6">
       {images.map((img, i) => (
         <figure
           key={i}
@@ -175,7 +178,7 @@ function SingleLargeLayout({ images }) {
             alt={img.caption ?? ''}
             loading="lazy"
             decoding="async"
-            className="block w-full transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+            className="mx-auto block h-auto max-h-[85vh] w-auto max-w-full transition-transform duration-700 ease-out group-hover:scale-[1.01]"
           />
         </figure>
       ))}
